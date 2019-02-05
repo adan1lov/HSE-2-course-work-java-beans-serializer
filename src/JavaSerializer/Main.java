@@ -11,7 +11,7 @@ public class Main {
         Person[] lp= new Person[2];
         lp[0]=p;
         lp[1]=p;
-        JavaSerializer serializer= new JavaSerializer(lp);
+        JavaSerializerTese serializer= new JavaSerializerTese(lp);
         serializer.Make("","json");
     }
 }
