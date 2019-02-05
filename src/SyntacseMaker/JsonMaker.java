@@ -16,7 +16,7 @@ public class JsonMaker extends Syntacse {
 
     @Override
     public String primitive(String name, String param) {
-        return name + " : " + param + ";";
+        return name + " : " + param + ";\n";
     }
 
     @Override

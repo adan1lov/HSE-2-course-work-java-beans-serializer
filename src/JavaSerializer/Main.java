@@ -1,5 +1,7 @@
 package JavaSerializer;
 
+import SyntacseMaker.JsonMaker;
+
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -11,8 +13,8 @@ public class Main {
         Person[] lp= new Person[2];
         lp[0]=p;
         lp[1]=p;
-        JavaSerializerTese serializer= new JavaSerializerTese(lp);
-        serializer.Make("","json");
+        JavaSerializer serializer= new JavaSerializer(lp);
+        serializer.Make("",new JsonMaker());
     }
 }
 class  Person{
