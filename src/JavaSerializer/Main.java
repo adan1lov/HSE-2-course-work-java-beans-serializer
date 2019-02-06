@@ -9,12 +9,20 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, IntrospectionException, InvocationTargetException {
 	// write your code here
-        Person p= new Person(20,"Alex",new Zompany(1,"Yandex"));
-        Person[] lp= new Person[2];
-        lp[0]=p;
-        lp[1]=p;
-        JavaSerializer serializer= new JavaSerializer(lp);
-        serializer.Make("",new JsonMaker());
+//        Person p= new Person(20,"Alex",new Zompany(1,"Yandex"));
+//        Person[] lp= new Person[2];
+//        lp[0]=p;
+//        lp[1]=p;
+//        JavaSerializer serializer= new JavaSerializer(lp);
+//        serializer.Make("",new JsonMaker());
+        StringBuilder s=new StringBuilder();
+        doit(s);
+        System.out.println(s.toString());
+    }
+    static public void doit(StringBuilder s)
+    {
+        s.append("s\n");
+        s.deleteCharAt(s.length()-1);
     }
 }
 class  Person{

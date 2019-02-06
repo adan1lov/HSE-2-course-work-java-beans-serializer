@@ -1,18 +1,18 @@
 package Syntacse;
 
 abstract public class Syntacse {
-    abstract public String header();
+    abstract public void header(StringBuilder output);
 
-    abstract public String end();
+    abstract public void end(StringBuilder output);
 
-    abstract public String primitive(String name, String param);
+    abstract public void primitive(String type,String name, Object param,StringBuilder output);
 
-    abstract public String nonPrimitiveBegin(String type);
+    abstract public void nonPrimitiveBegin(String type,String name,StringBuilder output);
 
-    abstract public String nonPrimitiveEnd(String type);
+    abstract public void nonPrimitiveEnd(String type,String name,StringBuilder output);
 
-    abstract public String arrayBegin(String type);
+    abstract public void arrayBegin(String type,String name,StringBuilder output);
 
-    abstract public String arrayEnd(String type);
+    abstract public void arrayEnd(String type,String name,StringBuilder output);
 
 }
