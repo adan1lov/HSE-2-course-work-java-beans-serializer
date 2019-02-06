@@ -1,5 +1,6 @@
 package JavaSerializer;
 
+//TODO:PROBLEM WITH TABS
 import Syntacse.Syntacse;
 
 import java.beans.*;
@@ -12,14 +13,14 @@ import java.lang.reflect.InvocationTargetException;
  * @author Danilov Alexey
  */
 public class JavaSerializer {
-    
+
     /*-----------------------------------------------------Fields-----------------------------------------------------*/
-    
+
     private Object _object;
     private Syntacse _syntacse;
-    
+
     /*---------------------------------------------------Constructor--------------------------------------------------*/
-    
+
     /**
      * Simple constructor
      *
@@ -30,9 +31,9 @@ public class JavaSerializer {
             throw new NullPointerException("Parameter is incorrect");
         _object = o;
     }
-    
+
     /*-----------------------------------------------------Methods----------------------------------------------------*/
-    
+
     /**
      * Main method that do all work
      *
@@ -40,101 +41,103 @@ public class JavaSerializer {
      * @param s    syntacse of serialization
      */
     public void Make(String path, Syntacse s)
-        throws IntrospectionException, InvocationTargetException, IllegalAccessException {
-        
+            throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+
         //syntacse that we would use
         if (s == null)
             throw new NullPointerException("Syntacse was null");
         _syntacse = s;
-        
+
         //result of serializing
         StringBuilder output = new StringBuilder();
         _syntacse.header(output);
-        
+        nonPrimitiveToString(output,"" ,_object ,0 );
         _syntacse.end(output);
         //TODO:made a file using path.
         System.out.println(output);
     }
-    
+
     /**
      * Method to make string about primitive variables
      *
      * @param name name of the parameter
      * @param o    parameter that we should convert to string
      * @param tabs numbers of tabs before description
-     *
      * @return string with description of primitive
      */
     private void primitiveToString(StringBuilder output, String name, Object o, int tabs) {
-        for (int i = 0; i < tabs; i++)
-            output.append("\t");
+//        for (int i = 0; i < tabs; i++)
+//            output.append("\t");
         _syntacse.primitive(o.getClass().getSimpleName(), name, o, output);
     }
 
-//    private String nonPrimitiveToString(String name, Object o, int tabs)
-//            throws IntrospectionException, InvocationTargetException, IllegalAccessException {
-//        String output = "";
+    private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs)
+            throws IntrospectionException, InvocationTargetException, IllegalAccessException {
 //        String tabsOut = "";
 //        for (int i = 0; i < tabs; i++)
 //            tabsOut += "\t";
-//        BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
-//        if (o.getClass().isArray()) {
-//            Class objectType = o.getClass();
-//            output += tabsOut + _syntacse.arrayBegin(objectType.getSimpleName());
 //
-//            if (objectType == byte[].class) {
-//                for (byte b : (byte[]) o)
-//                    output += _syntacse.primitive(byte.class.getSimpleName(), b + "");
-//            } else if (objectType == short[].class) {
-//                for (short b : (short[]) o)
-//                    output += _syntacse.primitive(short.class.getSimpleName(), b + "");
-//            } else if (objectType == int[].class) {
-//                for (int b : (int[]) o)
-//                    output += _syntacse.primitive(int.class.getSimpleName(), b + "");
-//            } else if (objectType == long[].class) {
-//                for (long b : (long[]) o)
-//                    output += _syntacse.primitive(long.class.getSimpleName(), b + "");
-//            } else if (objectType == char[].class) {
-//                for (char b : (char[]) o)
-//                    output += _syntacse.primitive(char.class.getSimpleName(), b + "");
-//            } else if (objectType == float[].class) {
-//                for (float b : (float[]) o)
-//                    output += _syntacse.primitive(float.class.getSimpleName(), b + "");
-//            } else if (objectType == double[].class) {
-//                for (double b : (double[]) o)
-//                    output += _syntacse.primitive(double.class.getSimpleName(), b + "");
-//            } else if (objectType == boolean[].class) {
-//                for (boolean b : (boolean[]) o)
-//                    output += _syntacse.primitive(boolean.class.getSimpleName(), b + "");
-//            } else if (objectType == String[].class) {
-//                for (String b : (String[]) o)
-//                    output += _syntacse.primitive(String.class.getSimpleName(), b);
-//            } else {
-//                for (Object b : (Object[]) o) {
-//                    output += nonPrimitiveToString("",b, tabs + 1);
-//                }
-//            }
-//            output += tabsOut + _syntacse.arrayEnd(objectType.getSimpleName());
+//        output.append(tabsOut);
+        Class objectType = o.getClass();
+        if (o.getClass().isArray()) {
+            _syntacse.arrayBegin(objectType.getSimpleName(), name, output);
+
+            if (objectType == byte[].class) {
+                for (byte b : (byte[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == short[].class) {
+                for (short b : (short[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == int[].class) {
+                for (int b : (int[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == long[].class) {
+                for (long b : (long[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == char[].class) {
+                for (char b : (char[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == float[].class) {
+                for (float b : (float[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == double[].class) {
+                for (double b : (double[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == boolean[].class) {
+                for (boolean b : (boolean[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else if (objectType == String[].class) {
+                for (String b : (String[]) o)
+                    primitiveToString(output, "", b, tabs + 1);
+            } else {
+                for (Object b : (Object[]) o) {
+                    nonPrimitiveToString(output, "", b, tabs + 1);
+                }
+            }
+//            output.append(tabsOut);
+            _syntacse.arrayEnd(objectType.getSimpleName(), name, output);
 //        } else if (o instanceof Iterable) {
 //            //TODO: make iterable;
-//        } else {
-//            output += tabsOut + _syntacse.nonPrimitiveBegin(o.getClass().getSimpleName());
-//            PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-//            for (PropertyDescriptor pd : propertyDescriptors) {
-//                if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
-//                    if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
+        } else {
+            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(),name,output);
+            BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
+            PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+            for (PropertyDescriptor pd : propertyDescriptors) {
+                if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
+                    if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
 //                        output += primitiveToString(
 //                                pd.getName(),
 //                                pd.getReadMethod().invoke(o),
 //                                tabs + 1
 //                        );
-//                    //else
-//                        //output += nonPrimitiveToString(pd.getReadMethod().invoke(o), tabs + 1);
-//                }
-//            }
-//            output += tabsOut + _syntacse.nonPrimitiveEnd(o.getClass().getSimpleName());
-//        }
+                        primitiveToString(output,pd.getName(),pd.getReadMethod().invoke(o),tabs+1 );
+                    else
+                        nonPrimitiveToString(output,pd.getName(),pd.getReadMethod().invoke(o), tabs + 1);
+                }
+            }
+//            output.append(tabsOut);
+            _syntacse.nonPrimitiveEnd(objectType.getSimpleName(),name,output);
+        }
 //
-//        return output;
-//    }
+    }
 }

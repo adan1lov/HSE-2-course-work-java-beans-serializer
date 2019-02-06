@@ -8,7 +8,7 @@ public class JsonMaker extends Syntacse {
     public void header(StringBuilder output) { }
 
     @Override
-    public void end(StringBuilder output) { }
+    public void end(StringBuilder output) { output.delete(output.length()-2,output.length()-1 );}
 
     @Override
     public void primitive(String type,String name, Object param,StringBuilder output) {
@@ -20,7 +20,7 @@ public class JsonMaker extends Syntacse {
             s="\""+param+"\"";
 
         if("".equals(name)){
-            output.append(s+"\n");
+            output.append(s+",\n");
             return;
         }
 
@@ -42,6 +42,7 @@ public class JsonMaker extends Syntacse {
 
     @Override
     public void nonPrimitiveEnd(String type,String name,StringBuilder output) {
+        output.delete(output.length()-2,output.length()-1 );
         output.append("},\n");
     }
 
@@ -59,6 +60,6 @@ public class JsonMaker extends Syntacse {
     public void arrayEnd(String type,String name,StringBuilder output) {
         output.deleteCharAt(output.length()-2);
         output.deleteCharAt(output.length()-1);
-        output.append("]\n");
+        output.append("\n],\n");
     }
 }

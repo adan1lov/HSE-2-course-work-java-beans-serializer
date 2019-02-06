@@ -9,15 +9,14 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, IntrospectionException, InvocationTargetException {
 	// write your code here
-//        Person p= new Person(20,"Alex",new Zompany(1,"Yandex"));
-//        Person[] lp= new Person[2];
-//        lp[0]=p;
-//        lp[1]=p;
-//        JavaSerializer serializer= new JavaSerializer(lp);
-//        serializer.Make("",new JsonMaker());
-        StringBuilder s=new StringBuilder();
-        doit(s);
-        System.out.println(s.toString());
+        Zompany z= new Zompany(1,"Yandex");
+        Person p= new Person(20,"Alex",new Zompany(1,"Yandex"));
+        Person[] lp= new Person[2];
+        lp[0]=p;
+        lp[1]=p;
+        JavaSerializer serializer= new JavaSerializer(lp);
+        serializer.Make("",new JsonMaker());
+
     }
     static public void doit(StringBuilder s)
     {
