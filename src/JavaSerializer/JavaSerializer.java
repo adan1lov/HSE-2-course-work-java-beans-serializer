@@ -74,6 +74,7 @@ public class JavaSerializer {
     private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs)
             throws IntrospectionException, InvocationTargetException, IllegalAccessException {
 //        String tabsOut = "";
+
 //        for (int i = 0; i < tabs; i++)
 //            tabsOut += "\t";
 //
