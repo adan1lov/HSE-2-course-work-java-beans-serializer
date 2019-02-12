@@ -71,7 +71,7 @@ public class JsonMaker extends Syntacse {
         output.deleteCharAt(output.length() - 2);
         output.deleteCharAt(output.length() - 1);
         output.append("\n");
-        for(int i=0;i<tabs;i++)
+        for (int i = 0; i < tabs; i++)
             output.append("\t");
         output.append("],\n");
     }
