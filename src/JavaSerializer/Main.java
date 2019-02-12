@@ -4,6 +4,7 @@ import SyntacseMaker.JsonMaker;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -11,9 +12,9 @@ public class Main {
 	// write your code here
         Zompany z= new Zompany(1,"Yandex");
         Person p= new Person(20,"Alex",new Zompany(1,"Yandex"));
-        Person[] lp= new Person[2];
-        lp[0]=p;
-        lp[1]=p;
+        ArrayList<Person> lp= new ArrayList<Person>();
+        lp.add(p);
+        lp.add(new Person(30,"GOSHA",new Zompany(2,"t2")));
         JavaSerializer serializer= new JavaSerializer(lp);
         serializer.Make("",new JsonMaker());
 

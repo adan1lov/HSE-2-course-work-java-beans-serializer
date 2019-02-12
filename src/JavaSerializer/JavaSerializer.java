@@ -5,6 +5,7 @@ import Syntacse.Syntacse;
 
 import java.beans.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
 
 /**
  * Serializer class
@@ -50,9 +51,9 @@ public class JavaSerializer {
 
         //result of serializing
         StringBuilder output = new StringBuilder();
-        _syntacse.header(output);
+        _syntacse.header(output,0);
         nonPrimitiveToString(output,"" ,_object ,0 );
-        _syntacse.end(output);
+        _syntacse.end(output,0);
         //TODO:made a file using path.
         System.out.println(output);
     }
@@ -66,22 +67,14 @@ public class JavaSerializer {
      * @return string with description of primitive
      */
     private void primitiveToString(StringBuilder output, String name, Object o, int tabs) {
-//        for (int i = 0; i < tabs; i++)
-//            output.append("\t");
-        _syntacse.primitive(o.getClass().getSimpleName(), name, o, output);
+        _syntacse.primitive(o.getClass().getSimpleName(), name, o, output,tabs);
     }
 
     private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs)
             throws IntrospectionException, InvocationTargetException, IllegalAccessException {
-//        String tabsOut = "";
-
-//        for (int i = 0; i < tabs; i++)
-//            tabsOut += "\t";
-//
-//        output.append(tabsOut);
         Class objectType = o.getClass();
         if (o.getClass().isArray()) {
-            _syntacse.arrayBegin(objectType.getSimpleName(), name, output);
+            _syntacse.arrayBegin(objectType.getSimpleName(), name, output,tabs);
 
             if (objectType == byte[].class) {
                 for (byte b : (byte[]) o)
@@ -115,30 +108,28 @@ public class JavaSerializer {
                     nonPrimitiveToString(output, "", b, tabs + 1);
                 }
             }
-//            output.append(tabsOut);
-            _syntacse.arrayEnd(objectType.getSimpleName(), name, output);
-//        } else if (o instanceof Iterable) {
-//            //TODO: make iterable;
+            _syntacse.arrayEnd(objectType.getSimpleName(), name, output,tabs);
+        } else if (o instanceof Iterable) {
+            _syntacse.arrayBegin(objectType.getSimpleName(), name, output,tabs);
+            Iterator iterator = ((Iterable) o).iterator();
+            while (iterator.hasNext()){
+                nonPrimitiveToString(output,"" ,iterator.next() ,tabs+1 );
+            }
+            _syntacse.arrayEnd(objectType.getSimpleName(), name, output,tabs);
+            
         } else {
-            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(),name,output);
+            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(),name,output,tabs);
             BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
             PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
             for (PropertyDescriptor pd : propertyDescriptors) {
                 if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
                     if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
-//                        output += primitiveToString(
-//                                pd.getName(),
-//                                pd.getReadMethod().invoke(o),
-//                                tabs + 1
-//                        );
                         primitiveToString(output,pd.getName(),pd.getReadMethod().invoke(o),tabs+1 );
                     else
                         nonPrimitiveToString(output,pd.getName(),pd.getReadMethod().invoke(o), tabs + 1);
                 }
             }
-//            output.append(tabsOut);
-            _syntacse.nonPrimitiveEnd(objectType.getSimpleName(),name,output);
+            _syntacse.nonPrimitiveEnd(objectType.getSimpleName(),name,output,tabs);
         }
-//
     }
 }
