@@ -52,6 +52,7 @@ public class JsonMaker extends Syntacse {
         for (int i = 0; i < tabs; i++)
             output.append("\t");
         output.append("},\n");
+        //end
     }
     
     @Override
