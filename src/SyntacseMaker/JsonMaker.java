@@ -53,6 +53,7 @@ public class JsonMaker extends Syntacse {
             output.append("\t");
         output.append("},\n");
         //end
+        //
     }
     
     @Override
