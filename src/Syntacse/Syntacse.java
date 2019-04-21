@@ -7,12 +7,14 @@ abstract public class Syntacse {
     
     abstract public void primitive(String type, String name, Object param, StringBuilder output, int tabs);
     
-    abstract public void nonPrimitiveBegin(String type, String name, StringBuilder output, int tabs);
+    abstract public void nonPrimitiveBegin(String type, String name, StringBuilder output, String id, int tabs);
     
     abstract public void nonPrimitiveEnd(String type, String name, StringBuilder output, int tabs);
     
     abstract public void arrayBegin(String type, String name, StringBuilder output, int tabs);
     
     abstract public void arrayEnd(String type, String name, StringBuilder output, int tabs);
+    
+    abstract public void reference(String type, String name,String id, StringBuilder output,int tabs);
     
 }

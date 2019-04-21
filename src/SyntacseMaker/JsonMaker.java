@@ -35,7 +35,7 @@ public class JsonMaker extends Syntacse {
     }
     
     @Override
-    public void nonPrimitiveBegin(String type, String name, StringBuilder output, int tabs) {
+    public void nonPrimitiveBegin(String type, String name, StringBuilder output, String id, int tabs) {
         for (int i = 0; i < tabs; i++)
             output.append("\t");
         if ("".equals(name)) {
@@ -43,7 +43,7 @@ public class JsonMaker extends Syntacse {
             return;
         }
         output.append("\"" + name + "\"")
-            .append(" : {\n");
+            .append(" : { \n");
     }
     
     @Override
@@ -76,5 +76,10 @@ public class JsonMaker extends Syntacse {
         for (int i = 0; i < tabs; i++)
             output.append("\t");
         output.append("],\n");
+    }
+    
+    @Override
+    public void reference(String type, String name, String id, StringBuilder output, int tabs) {
+    
     }
 }

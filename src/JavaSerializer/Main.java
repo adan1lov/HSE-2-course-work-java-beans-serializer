@@ -1,6 +1,7 @@
 package JavaSerializer;
 
 import SyntacseMaker.JsonMaker;
+import SyntacseMaker.XmlMaker;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
@@ -10,13 +11,12 @@ public class Main {
     
     public static void main(String[] args) throws IllegalAccessException, IntrospectionException, InvocationTargetException {
         // write your code here
-        Zompany z = new Zompany(1, "Yandex");
-        Person p = new Person(20, "Alex", new Zompany(1, "Yandex"));
-        ArrayList<Person> lp = new ArrayList<Person>();
-        lp.add(p);
-        lp.add(new Person(30, "GOSHA", new Zompany(2, "t2")));
-        JavaSerializer serializer = new JavaSerializer(lp);
-        serializer.Make("", new JsonMaker());
+        A a= new A();
+        B b= new B();
+        a.setFieldB(b);
+        b.setFieldA(a);
+        JavaSerializer serializer = new JavaSerializer(a);
+        serializer.Make("", new XmlMaker());
         
     }
     
@@ -26,52 +26,40 @@ public class Main {
     }
 }
 
-class Person {
-    private int[] age;
-    private String name;
-    private Zompany zmp;
+class A{
+    private B fieldB;
     
-    Person(int i, String s, Zompany cmpa) {
-        age = new int[2];
-        age[0] = 0;
-        age[1] = 2;
-        name = s;
-        zmp = cmpa;
+    public B getFieldB() {
+        return fieldB;
     }
     
-    public int[] getAge() {
-        return age;
+    private int anInt;
+    
+    public int getAnInt() {
+        return anInt;
     }
     
-    public String getName() {
-        return name;
+    public void setAnInt(int anInt) {
+        this.anInt = anInt;
     }
     
-    public Zompany getZmp() {
-        return zmp;
+    public void setFieldB(B fieldB) {
+        this.fieldB = fieldB;
     }
     
-    Person() {
-    }
+    public A(){}
 }
 
-class Zompany {
-    private String companyName;
-    private int id;
+class  B{
+    private A fieldA;
     
-    public int getId() {
-        return id;
+    public A getFieldA() {
+        return fieldA;
     }
     
-    public String getCompanyName() {
-        return companyName;
+    public void setFieldA(A fieldA) {
+        this.fieldA = fieldA;
     }
     
-    Zompany(int i, String s) {
-        id = i;
-        companyName = s;
-    }
-    
-    Zompany() {
-    }
+    public B(){}
 }

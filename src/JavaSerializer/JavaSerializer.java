@@ -6,7 +6,9 @@ import Syntacse.Syntacse;
 
 import java.beans.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Serializer class
@@ -20,6 +22,8 @@ public class JavaSerializer {
     
     private Object _object;
     private Syntacse _syntacse;
+    List<Object> objectList;
+    List<String> idList;
     
     /*---------------------------------------------------Constructor--------------------------------------------------*/
     
@@ -44,6 +48,9 @@ public class JavaSerializer {
      */
     public void Make(String path, Syntacse s)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+        
+        objectList= new ArrayList<>();
+        idList= new ArrayList<>();
         
         //syntacse that we would use
         if (s == null)
@@ -74,6 +81,12 @@ public class JavaSerializer {
     
     private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+        for (int i=0;i<objectList.size();i++) {
+            if(objectList.get(i) ==o){
+                _syntacse.reference(o.getClass().getSimpleName(), name, idList.get(i),output ,tabs );
+                return;
+            }
+        }
         Class objectType = o.getClass();
         if (o.getClass().isArray()) {
             _syntacse.arrayBegin(objectType.getSimpleName(), name, output, tabs);
@@ -120,7 +133,10 @@ public class JavaSerializer {
             _syntacse.arrayEnd(objectType.getSimpleName(), name, output, tabs);
             
         } else {
-            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(), name, output, tabs);
+            objectList.add(o);
+            idList.add(objectType.getSimpleName()+""+idList.size());
+            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(), name, output,
+                objectType.getSimpleName()+""+(idList.size()-1), tabs);
             BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
             PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
             for (PropertyDescriptor pd : propertyDescriptors) {
@@ -131,6 +147,7 @@ public class JavaSerializer {
                         nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1);
                 }
             }
+            
             _syntacse.nonPrimitiveEnd(objectType.getSimpleName(), name, output, tabs);
         }
     }
