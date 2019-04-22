@@ -49,8 +49,8 @@ public class JavaSerializer {
     public void Make(String path, Syntacse s)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException {
         
-        objectList= new ArrayList<>();
-        idList= new ArrayList<>();
+        objectList = new ArrayList<>();
+        idList = new ArrayList<>();
         
         //syntacse that we would use
         if (s == null)
@@ -60,7 +60,7 @@ public class JavaSerializer {
         //result of serializing
         StringBuilder output = new StringBuilder();
         _syntacse.header(output, 0);
-        nonPrimitiveToString(output, "", _object, 0);
+        nonPrimitiveToString(output, "", _object, 0, -1);
         _syntacse.end(output, 0);
         //TODO:made a file using path.
         System.out.println(output);
@@ -75,80 +75,86 @@ public class JavaSerializer {
      *
      * @return string with description of primitive
      */
-    private void primitiveToString(StringBuilder output, String name, Object o, int tabs) {
-        _syntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs);
+    private void primitiveToString(StringBuilder output, String name, Object o, int tabs, int index) {
+        _syntacse.primitive(o.getClass().getName(), name, o, output, tabs, index);
     }
     
-    private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs)
+    private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs, int index)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException {
-        for (int i=0;i<objectList.size();i++) {
-            if(objectList.get(i) ==o){
-                _syntacse.reference(o.getClass().getSimpleName(), name, idList.get(i),output ,tabs );
+        for (int i = 0; i < objectList.size(); i++) {
+            if (objectList.get(i) == o) {
+                _syntacse.reference(o.getClass().getSimpleName(), name, idList.get(i), output, tabs, index);
                 return;
             }
         }
         Class objectType = o.getClass();
         if (o.getClass().isArray()) {
-            _syntacse.arrayBegin(objectType.getSimpleName(), name, output, tabs);
+            objectList.add(o);
+            idList.add(objectType.getSimpleName() + "" + idList.size());
+            _syntacse.arrayBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((Object[]) o).length);
             
             if (objectType == byte[].class) {
-                for (byte b : (byte[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((byte[]) o).length; i++)
+                    primitiveToString(output, "", ((byte[]) o)[i], tabs + 1, i);
             } else if (objectType == short[].class) {
-                for (short b : (short[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((short[]) o).length; i++)
+                    primitiveToString(output, "", ((short[]) o)[i], tabs + 1, i);
             } else if (objectType == int[].class) {
-                for (int b : (int[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((int[]) o).length; i++)
+                    primitiveToString(output, "", ((int[]) o)[i], tabs + 1, i);
             } else if (objectType == long[].class) {
-                for (long b : (long[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((long[]) o).length; i++)
+                    primitiveToString(output, "", ((long[]) o)[i], tabs + 1, i);
             } else if (objectType == char[].class) {
-                for (char b : (char[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((char[]) o).length; i++)
+                    primitiveToString(output, "", ((char[]) o)[i], tabs + 1, i);
             } else if (objectType == float[].class) {
-                for (float b : (float[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((float[]) o).length; i++)
+                    primitiveToString(output, "", ((float[]) o)[i], tabs + 1, i);
             } else if (objectType == double[].class) {
-                for (double b : (double[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((double[]) o).length; i++)
+                    primitiveToString(output, "", ((double[]) o)[i], tabs + 1, i);
             } else if (objectType == boolean[].class) {
-                for (boolean b : (boolean[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((boolean[]) o).length; i++)
+                    primitiveToString(output, "", ((boolean[]) o)[i], tabs + 1, i);
             } else if (objectType == String[].class) {
-                for (String b : (String[]) o)
-                    primitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((String[]) o).length; i++)
+                    primitiveToString(output, "", ((String[]) o)[i], tabs + 1, i);
             } else {
-                for (Object b : (Object[]) o) {
-                    nonPrimitiveToString(output, "", b, tabs + 1);
+                for (int i = 0; i < ((Object[]) o).length; i++) {
+                    nonPrimitiveToString(output, "", ((Object[]) o)[i], tabs + 1, i);
                 }
             }
-            _syntacse.arrayEnd(objectType.getSimpleName(), name, output, tabs);
+            _syntacse.arrayEnd(objectType.getName(), name, output, tabs, index);
         } else if (o instanceof Iterable) {
-            _syntacse.arrayBegin(objectType.getSimpleName(), name, output, tabs);
+            objectList.add(o);
+            idList.add(objectType.getSimpleName() + "" + idList.size());
+            _syntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + (idList.size() - 1), tabs, index);
             Iterator iterator = ((Iterable) o).iterator();
             while (iterator.hasNext()) {
-                nonPrimitiveToString(output, "", iterator.next(), tabs + 1);
+                nonPrimitiveToString(output, "", iterator.next(), tabs + 1, index);
             }
-            _syntacse.arrayEnd(objectType.getSimpleName(), name, output, tabs);
+            _syntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
             
         } else {
+            //TODO: fix the bug with Wrappers of primitives
             objectList.add(o);
-            idList.add(objectType.getSimpleName()+""+idList.size());
-            _syntacse.nonPrimitiveBegin(objectType.getSimpleName(), name, output,
-                objectType.getSimpleName()+""+(idList.size()-1), tabs);
+            idList.add(objectType.getSimpleName() + "" + idList.size());
+            _syntacse.nonPrimitiveBegin(objectType.getName(), name, output,
+                objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
             BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
             PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
             for (PropertyDescriptor pd : propertyDescriptors) {
                 if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
                     if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
-                        primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1);
-                    else
-                        nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1);
+                        primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
+                    else if (pd.getReadMethod().invoke(o) != null)
+                        nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
                 }
             }
-            
-            _syntacse.nonPrimitiveEnd(objectType.getSimpleName(), name, output, tabs);
+            if(o==_object)
+                index=-2;
+            _syntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
         }
     }
 }
