@@ -24,6 +24,29 @@ public class XmlMaker extends Syntacse {
         for (int i = 0; i < tabs; i++)
             tabString += '\t';
         
+        if(type.equals("Integer"))
+            type="int";
+        else if(type.equals("Boolean"))
+            type="boolean";
+        else if(type.equals("Short"))
+            type="short";
+        else if(type.equals("Double"))
+            type="double";
+        else if(type.equals("Float"))
+            type="float";
+        else if(type.equals("Byte"))
+            type="byte";
+        else if(type.equals("Character"))
+            type="char";
+        else if(type.equals("Long"))
+            type="long";
+        else if(type.equals("String"))
+            type="string";
+    
+    
+    
+    
+    
         if (!begin) {
             if (index != -1)
                 output.append(tabString + "<void index=\"" + index + "\">\n");
@@ -34,7 +57,7 @@ public class XmlMaker extends Syntacse {
         } else {
             begin = false;
         }
-        output.append("\t" + tabString + "<" + param.getClass().getSimpleName() + ">" + param + "</" + param.getClass().getSimpleName() + ">" + "\n");
+        output.append("\t" + tabString + "<" + type + ">" + param + "</" + type + ">" + "\n");
         output.append(tabString + "</void>\n");
         
     }

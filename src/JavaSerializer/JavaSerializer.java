@@ -76,7 +76,7 @@ public class JavaSerializer {
      * @return string with description of primitive
      */
     private void primitiveToString(StringBuilder output, String name, Object o, int tabs, int index) {
-        _syntacse.primitive(o.getClass().getName(), name, o, output, tabs, index);
+        _syntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
     }
     
     private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs, int index)
@@ -91,7 +91,8 @@ public class JavaSerializer {
         if (o.getClass().isArray()) {
             objectList.add(o);
             idList.add(objectType.getSimpleName() + "" + idList.size());
-            _syntacse.arrayBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((Object[]) o).length);
+            _syntacse.arrayBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + idList.size(),
+                tabs, index, ((Object[]) o).length);
             
             if (objectType == byte[].class) {
                 for (int i = 0; i < ((byte[]) o).length; i++)
@@ -129,7 +130,8 @@ public class JavaSerializer {
         } else if (o instanceof Iterable) {
             objectList.add(o);
             idList.add(objectType.getSimpleName() + "" + idList.size());
-            _syntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + (idList.size() - 1), tabs, index);
+            _syntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" +
+                (idList.size() - 1), tabs, index);
             Iterator iterator = ((Iterable) o).iterator();
             while (iterator.hasNext()) {
                 nonPrimitiveToString(output, "", iterator.next(), tabs + 1, index);
@@ -138,23 +140,42 @@ public class JavaSerializer {
             
         } else {
             //TODO: fix the bug with Wrappers of primitives
-            objectList.add(o);
-            idList.add(objectType.getSimpleName() + "" + idList.size());
-            _syntacse.nonPrimitiveBegin(objectType.getName(), name, output,
-                objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
-            BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
-            PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-            for (PropertyDescriptor pd : propertyDescriptors) {
-                if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
-                    if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
-                        primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
-                    else if (pd.getReadMethod().invoke(o) != null)
-                        nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
+            if (objectType == Byte.class) {
+                primitiveToString(output, "", ((byte) o), tabs + 1, index);
+            } else if (objectType == Short.class) {
+                primitiveToString(output, "", ((short) o), tabs + 1, index);
+            } else if (objectType == Integer.class) {
+                primitiveToString(output, "", ((int) o), tabs + 1, index);
+            } else if (objectType == Long.class) {
+                primitiveToString(output, "", ((long) o), tabs + 1, index);
+            } else if (objectType == Character.class) {
+                primitiveToString(output, "", ((char) o), tabs + 1, index);
+            } else if (objectType == Float.class) {
+                primitiveToString(output, "", ((float) o), tabs + 1, index);
+            } else if (objectType == Double.class) {
+                primitiveToString(output, "", ((double) o), tabs + 1, index);
+            } else if (objectType == Boolean.class) {
+                primitiveToString(output, "", ((boolean) o), tabs + 1, index);
+            } else {
+                objectList.add(o);
+                idList.add(objectType.getSimpleName() + "" + idList.size());
+                _syntacse.nonPrimitiveBegin(objectType.getName(), name, output,
+                    objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
+                BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
+                PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+                for (PropertyDescriptor pd : propertyDescriptors) {
+                    if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
+                        if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
+                            primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
+                        else if (pd.getReadMethod().invoke(o) != null)
+                            nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o),
+                                tabs + 1, -1);
+                    }
                 }
+                if (o == _object)
+                    index = -2;
+                _syntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
             }
-            if(o==_object)
-                index=-2;
-            _syntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
         }
     }
 }
