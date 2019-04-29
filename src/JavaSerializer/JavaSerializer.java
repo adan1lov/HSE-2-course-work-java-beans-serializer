@@ -1,6 +1,5 @@
 package JavaSerializer;
 
-//TODO:PROBLEM WITH TABS and check commits
 
 import SyntacseForSerializing.SerializingSyntacse;
 
@@ -76,8 +75,7 @@ public class JavaSerializer {
      */
     private void primitiveToString(FileWriter output, String name, Object o, int tabs, int index) throws IOException {
         _serializingSyntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
-    }        //TODO:made a file using path.
-
+    }
     
     private void nonPrimitiveToString(FileWriter output, String name, Object o, int tabs, int index)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
@@ -139,7 +137,6 @@ public class JavaSerializer {
             _serializingSyntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
             
         } else {
-            //TODO: fix the bug with Wrappers of primitives
             if (objectType == Byte.class) {
                 primitiveToString(output, "",  o, tabs + 1, index);
             } else if (objectType == Short.class) {
