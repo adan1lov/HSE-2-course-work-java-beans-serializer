@@ -2,10 +2,13 @@ package JavaSerializer;
 
 //import SyntacseMaker.JsonMaker;
 
-import SyntacseMaker.XmlMaker;
+import SyntacseMaker.XmlSerializingSyntacse;
 
+import java.beans.ExceptionListener;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args)
-        throws IllegalAccessException, IntrospectionException, InvocationTargetException {
+        throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
         // write your code here
         Company company = new Company("Yandex Taxi", 999999999);
 
@@ -45,128 +48,34 @@ public class Main {
 
         JavaDeserializer javaDeserializer= new JavaDeserializer(company.getClass());
         JavaSerializer serializer = new JavaSerializer(company);
-        serializer.Make("", new XmlMaker());
-        XMLDecoder
+        try(FileWriter writer = new FileWriter("notes.xml", false)) {
+            serializer.Make(writer, new XmlSerializingSyntacse());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+        FileOutputStream fos = new FileOutputStream("settings.xml");
+        XMLEncoder encoder = new XMLEncoder(fos);
+        encoder.setExceptionListener(new ExceptionListener() {
+            public void exceptionThrown(Exception e) {
+                System.out.println("Exception! :"+e.toString());
+            }
+        });
+        encoder.writeObject(company);
+        encoder.close();
+        fos.close();
+        
+        
+        FileInputStream fis = new FileInputStream("notes.xml");
+        XMLDecoder decoder = new XMLDecoder(fis);
+        Company decodedSettings = (Company) decoder.readObject();
+        decoder.close();
+        fis.close();
+        System.out.println(
+        
+        );
+        
     }
 
 }
 
-class Company {
-
-    private String companyName;
-    private ArrayList<Person> persons;
-    private long budget;
-
-    public Company(String companyName, long budget) {
-        this.budget = budget;
-        this.companyName = companyName;
-        persons = new ArrayList<Person>();
-    }
-
-
-    public ArrayList<Person> getPersons() {
-        return persons;
-    }
-
-    public long getBudget() {
-        return budget;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setBudget(long budget) {
-        this.budget = budget;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public void setPersons(ArrayList<Person> persons) {
-        this.persons = persons;
-    }
-}
-
-class Person {
-
-    public Person(int age, int telephone, Company company, String[] childs,
-        List<Integer> ratingHistory, float rate, String name) {
-        this.age = age;
-        this.childs = childs;
-        this.company = company;
-        this.telephone = telephone;
-        this.ratingHistory = ratingHistory;
-        this.rate = rate;
-        this.name = name;
-    }
-
-    private String name;
-    private int age;
-    private int telephone;
-    private Company company;
-    private String[] childs;
-    private List<Integer> ratingHistory;
-    private float rate;
-
-    public Person() {
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public float getRate() {
-        return rate;
-    }
-
-    public int getTelephone() {
-        return telephone;
-    }
-
-    public List<Integer> getRatingHistory() {
-        return ratingHistory;
-    }
-
-    public String[] getChilds() {
-        return childs;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setChilds(String[] childs) {
-        this.childs = childs;
-    }
-
-    public void setRate(float rate) {
-        this.rate = rate;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public void setRatingHistory(List<Integer> ratingHistory) {
-        this.ratingHistory = ratingHistory;
-    }
-
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
-    }
-
-}

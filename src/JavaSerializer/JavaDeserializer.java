@@ -7,6 +7,7 @@ import sun.misc.SharedSecrets;
 public class JavaDeserializer {
     Type typeOfObject;
     InputStream stream;
+    Object deserializedObject;
     public JavaDeserializer(Type typeOfObject){
         this.typeOfObject=typeOfObject;
     }
@@ -15,7 +16,7 @@ public class JavaDeserializer {
         this.stream=stream;
         String someClassName = "com.javainterviewpoint.Test";
         Class clasz = Class.forName(someClassName);
-        clasz.newInstance();
-
+        deserializedObject =clasz.newInstance();
+        return  deserializedObject;
     }
 }

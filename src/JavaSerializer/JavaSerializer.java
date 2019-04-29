@@ -2,9 +2,11 @@ package JavaSerializer;
 
 //TODO:PROBLEM WITH TABS and check commits
 
-import Syntacse.Syntacse;
+import SyntacseForSerializing.SerializingSyntacse;
 
 import java.beans.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,7 +23,7 @@ public class JavaSerializer {
     /*-----------------------------------------------------Fields-----------------------------------------------------*/
     
     private Object _object;
-    private Syntacse _syntacse;
+    private SerializingSyntacse _serializingSyntacse;
     List<Object> objectList;
     List<String> idList;
     
@@ -43,27 +45,24 @@ public class JavaSerializer {
     /**
      * Main method that do all work
      *
-     * @param path path to serialized file
+     * @param writer writer in file
      * @param s    syntacse of serialization
      */
-    public void Make(String path, Syntacse s)
-        throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+    public void Make(FileWriter writer, SerializingSyntacse s)
+        throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
         
         objectList = new ArrayList<>();
         idList = new ArrayList<>();
         
         //syntacse that we would use
         if (s == null)
-            throw new NullPointerException("Syntacse was null");
-        _syntacse = s;
+            throw new NullPointerException("SyntacseForSerializing was null");
+        _serializingSyntacse = s;
         
         //result of serializing
-        StringBuilder output = new StringBuilder();
-        _syntacse.header(output, 0);
-        nonPrimitiveToString(output, "", _object, 0, -1);
-        _syntacse.end(output, 0);
-        //TODO:made a file using path.
-        System.out.println(output);
+        _serializingSyntacse.header(writer, 0);
+        nonPrimitiveToString(writer, "", _object, 0, -1);
+        _serializingSyntacse.end(writer, 0);
     }
     
     /**
@@ -75,15 +74,16 @@ public class JavaSerializer {
      *
      * @return string with description of primitive
      */
-    private void primitiveToString(StringBuilder output, String name, Object o, int tabs, int index) {
-        _syntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
-    }
+    private void primitiveToString(FileWriter output, String name, Object o, int tabs, int index) throws IOException {
+        _serializingSyntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
+    }        //TODO:made a file using path.
+
     
-    private void nonPrimitiveToString(StringBuilder output, String name, Object o, int tabs, int index)
-        throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+    private void nonPrimitiveToString(FileWriter output, String name, Object o, int tabs, int index)
+        throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
         for (int i = 0; i < objectList.size(); i++) {
             if (objectList.get(i) == o) {
-                _syntacse.reference(o.getClass().getSimpleName(), name, idList.get(i), output, tabs, index);
+                _serializingSyntacse.reference(o.getClass().getSimpleName(), name, idList.get(i), output, tabs, index);
                 return;
             }
         }
@@ -91,8 +91,8 @@ public class JavaSerializer {
         if (o.getClass().isArray()) {
             objectList.add(o);
             idList.add(objectType.getSimpleName() + "" + idList.size());
-            _syntacse.arrayBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" + idList.size(),
-                tabs, index, ((Object[]) o).length);
+            _serializingSyntacse.arrayBegin(objectType.getName(), name, output,
+                objectType.getSimpleName() + "" + idList.size(), tabs, index, ((Object[]) o).length);
             
             if (objectType == byte[].class) {
                 for (int i = 0; i < ((byte[]) o).length; i++)
@@ -126,17 +126,17 @@ public class JavaSerializer {
                     nonPrimitiveToString(output, "", ((Object[]) o)[i], tabs + 1, i);
                 }
             }
-            _syntacse.arrayEnd(objectType.getName(), name, output, tabs, index);
+            _serializingSyntacse.arrayEnd(objectType.getName(), name, output, tabs, index);
         } else if (o instanceof Iterable) {
             objectList.add(o);
             idList.add(objectType.getSimpleName() + "" + idList.size());
-            _syntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" +
+            _serializingSyntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" +
                 (idList.size() - 1), tabs, index);
             Iterator iterator = ((Iterable) o).iterator();
             while (iterator.hasNext()) {
                 nonPrimitiveToString(output, "", iterator.next(), tabs + 1, index);
             }
-            _syntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
+            _serializingSyntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
             
         } else {
             //TODO: fix the bug with Wrappers of primitives
@@ -161,7 +161,7 @@ public class JavaSerializer {
                 objectList.add(o);
                 idList.add(objectType.getSimpleName() + "" + idList.size());
 
-                _syntacse.nonPrimitiveBegin(objectType.getName(), name, output,
+                _serializingSyntacse.nonPrimitiveBegin(objectType.getName(), name, output,
                     objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
 
                 BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
@@ -171,7 +171,9 @@ public class JavaSerializer {
                     if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
 
                         if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
-                            primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
+                            primitiveToString(
+                                output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1
+                            );
                         else if (pd.getReadMethod().invoke(o) != null)
                             nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o),
                                 tabs + 1, -1);
@@ -181,7 +183,7 @@ public class JavaSerializer {
                 if (o == _object)
                     index = -2;
 
-                _syntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
+                _serializingSyntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
             }
         }
     }

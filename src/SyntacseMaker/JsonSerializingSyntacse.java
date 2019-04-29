@@ -1,8 +1,8 @@
 //package SyntacseMaker;
 //
-//import Syntacse.Syntacse;
+//import SyntacseForSerializing.SyntacseForSerializing;
 //
-//public class JsonMaker extends Syntacse {
+//public class JsonMaker extends SyntacseForSerializing {
 //
 //    @Override
 //    public void header(StringBuilder output, int tabs) {
