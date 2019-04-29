@@ -8,10 +8,7 @@ import java.beans.ExceptionListener;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
@@ -58,16 +55,12 @@ public class Main {
     
         FileOutputStream fos = new FileOutputStream("settings.xml");
         XMLEncoder encoder = new XMLEncoder(fos);
-        encoder.setExceptionListener(new ExceptionListener() {
-            public void exceptionThrown(Exception e) {
-                System.out.println("Exception! :"+e.toString());
-            }
-        });
+        encoder.setExceptionListener(e -> System.out.println("Exception! :"+e.toString()));
         encoder.writeObject(company);
         encoder.close();
         fos.close();
-        
-        
+    
+    
         FileInputStream fis = new FileInputStream("notes.xml");
         XMLDecoder decoder = new XMLDecoder(fis);
         Company decodedSettings = (Company) decoder.readObject();

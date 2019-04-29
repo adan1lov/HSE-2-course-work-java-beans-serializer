@@ -52,14 +52,16 @@ public class JavaSerializer {
      */
     public void Make(FileWriter writer, SerializingSyntacse s)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
-        
-        objectList = new ArrayList<>();
-        idList = new ArrayList<>();
-        
+    
         //syntacse that we would use
         if (s == null)
             throw new NullPointerException("SyntacseForSerializing was null");
         _serializingSyntacse = s;
+    
+    
+        objectList = new ArrayList<>();
+        idList = new ArrayList<>();
+        
         
         //result of serializing
         _serializingSyntacse.header(writer, 0);
