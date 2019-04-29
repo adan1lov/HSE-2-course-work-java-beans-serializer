@@ -139,34 +139,37 @@ public class JavaSerializer {
             _syntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
             
         } else {
+            //TODO: fix the bug with Wrappers of primitives
             if (objectType == Byte.class) {
-                primitiveToString(output, "", ((byte) o), tabs + 1, index);
+                primitiveToString(output, "",  o, tabs + 1, index);
             } else if (objectType == Short.class) {
-                primitiveToString(output, "", ((short) o), tabs + 1, index);
+                primitiveToString(output, "",  o, tabs + 1, index);
             } else if (objectType == Integer.class) {
-                primitiveToString(output, "", ((int) o), tabs + 1, index);
+                primitiveToString(output, "", o, tabs + 1, index);
             } else if (objectType == Long.class) {
-                primitiveToString(output, "", ((long) o), tabs + 1, index);
+                primitiveToString(output, "", o, tabs + 1, index);
             } else if (objectType == Character.class) {
-                primitiveToString(output, "", ((char) o), tabs + 1, index);
+                primitiveToString(output, "",  o, tabs + 1, index);
             } else if (objectType == Float.class) {
-                primitiveToString(output, "", ((float) o), tabs + 1, index);
+                primitiveToString(output, "", o, tabs + 1, index);
             } else if (objectType == Double.class) {
-                primitiveToString(output, "", ((double) o), tabs + 1, index);
+                primitiveToString(output, "", o, tabs + 1, index);
             } else if (objectType == Boolean.class) {
-                primitiveToString(output, "", ((boolean) o), tabs + 1, index);
+                primitiveToString(output, "", o, tabs + 1, index);
             } else {
+
                 objectList.add(o);
                 idList.add(objectType.getSimpleName() + "" + idList.size());
-                
+
                 _syntacse.nonPrimitiveBegin(objectType.getName(), name, output,
                     objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
-                
+
                 BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
                 PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-                
+
                 for (PropertyDescriptor pd : propertyDescriptors) {
                     if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
+
                         if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
                             primitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
                         else if (pd.getReadMethod().invoke(o) != null)
@@ -174,10 +177,10 @@ public class JavaSerializer {
                                 tabs + 1, -1);
                     }
                 }
-                
+
                 if (o == _object)
                     index = -2;
-                
+
                 _syntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
             }
         }
