@@ -1,10 +1,14 @@
-package JavaSerializer;
+package Clases;
 
-//import SyntacseMaker.JsonMaker;
+//import Syntacse.JsonMaker;
 
-import SyntacseMaker.XmlSerializingSyntacse;
+import SerializerAndDeserializer.JavaDeserializer;
+import SerializerAndDeserializer.JavaSerializer;
+import Syntacse.XML.XmlDeserializingSyntacse;
+import Syntacse.XML.XmlSerializingSyntacse;
+import org.xml.sax.SAXException;
 
-import java.beans.ExceptionListener;
+import javax.xml.parsers.ParserConfigurationException;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -15,7 +19,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args)
-        throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
+        throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException, ParserConfigurationException, SAXException {
         // write your code here
         Company company = new Company("Yandex Taxi", 999999999);
 
@@ -45,7 +49,8 @@ public class Main {
         company.getPersons().add(p2);
         company.getPersons().add(p3);
 
-        JavaDeserializer javaDeserializer= new JavaDeserializer(company.getClass());
+        JavaDeserializer javaDeserializer= new JavaDeserializer();
+        Company o=(Company)javaDeserializer.Make(new FileInputStream("notes.xml"), new XmlDeserializingSyntacse());
         JavaSerializer serializer = new JavaSerializer(company);
         try(FileWriter writer = new FileWriter("notes.xml", false)) {
             serializer.Make(writer, new XmlSerializingSyntacse());

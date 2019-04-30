@@ -1,4 +1,4 @@
-//package SyntacseMaker;
+//package Syntacse;
 //
 //import SyntacseForSerializing.SyntacseForSerializing;
 //

@@ -1,11 +1,11 @@
-package SyntacseMaker;
+package Syntacse.XML;
 
 import SyntacseForSerializing.SerializingSyntacse;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class XmlSerializingSyntacse extends SerializingSyntacse {
+public class XmlSerializingSyntacse implements SerializingSyntacse {
     
     boolean begin = true;
     
@@ -66,7 +66,7 @@ public class XmlSerializingSyntacse extends SerializingSyntacse {
     }
     
     @Override
-    public void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs, int index) throws IOException {
+    public void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs, int index, boolean superObject) throws IOException {
 //        <object class="com.company.A" id="10">
         String tabString = "";
         for (int i = 0; i < tabs; i++)
@@ -86,12 +86,12 @@ public class XmlSerializingSyntacse extends SerializingSyntacse {
     }
     
     @Override
-    public void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException {
+    public void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index, boolean superObject) throws IOException {
         String tabString = "";
         for (int i = 0; i < tabs; i++)
             tabString += '\t';
         output.write(tabString + "</object>\n");
-        if(index!=-2)
+        if(!superObject)
             output.write(tabString + "</void>\n");
     }
     

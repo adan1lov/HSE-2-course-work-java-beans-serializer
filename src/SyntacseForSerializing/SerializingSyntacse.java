@@ -3,25 +3,25 @@ package SyntacseForSerializing;
 import java.io.FileWriter;
 import java.io.IOException;
 
-abstract public class SerializingSyntacse {
-    abstract public void header(FileWriter output, int tabs) throws IOException;
+public interface SerializingSyntacse {
+    void header(FileWriter output, int tabs) throws IOException;
     
-    abstract public void end(FileWriter output, int tabs) throws IOException;
+    void end(FileWriter output, int tabs) throws IOException;
     
-    abstract public void primitive(String type, String name, Object param, FileWriter output, int tabs,int index) throws IOException;
+    void primitive(String type, String name, Object param, FileWriter output, int tabs, int index) throws IOException;
     
-    abstract public void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs,int index) throws IOException;
+    void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs, int index, boolean superObject) throws IOException;
     
-    abstract public void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs,int index) throws IOException;
+    void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index, boolean superObject) throws IOException;
     
-    abstract public void arrayBegin(String type, String name, FileWriter output, String id, int tabs,int index,int length) throws IOException;
+    void arrayBegin(String type, String name, FileWriter output, String id, int tabs, int index, int length) throws IOException;
     
-    abstract public void arrayEnd(String type, String name, FileWriter output, int tabs,int index) throws IOException;
+    void arrayEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException;
     
-    abstract public void itarableBegin(String type, String name, FileWriter output,String id, int tabs,int index) throws IOException;
+    void itarableBegin(String type, String name, FileWriter output, String id, int tabs, int index) throws IOException;
     
-    abstract public void iterableEnd(String type, String name, FileWriter output, int tabs,int index) throws IOException;
+    void iterableEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException;
     
-    abstract public void reference(String type, String name,String id, FileWriter output,int tabs,int index) throws IOException;
+    void reference(String type, String name, String id, FileWriter output, int tabs, int index) throws IOException;
     
 }

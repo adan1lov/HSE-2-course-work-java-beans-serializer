@@ -1,4 +1,4 @@
-package JavaSerializer;
+package SerializerAndDeserializer;
 
 
 import SyntacseForSerializing.SerializingSyntacse;
@@ -164,13 +164,14 @@ public class JavaSerializer {
                 idList.add(objectType.getSimpleName() + "" + idList.size());
 
                 _serializingSyntacse.nonPrimitiveBegin(objectType.getName(), name, output,
-                    objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1);
+                    objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1,o==_object);
 
-                BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass());
+                BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass(),Object.class);
+                
                 PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
 
                 for (PropertyDescriptor pd : propertyDescriptors) {
-                    if (pd.getReadMethod() != null && !"class".equals(pd.getDisplayName())) {
+                    if (pd.getReadMethod() != null) {
 
                         if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
                             primitiveToString(
@@ -181,11 +182,8 @@ public class JavaSerializer {
                                 tabs + 1, -1);
                     }
                 }
-
-                if (o == _object)
-                    index = -2;
-
-                _serializingSyntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index);
+                
+                _serializingSyntacse.nonPrimitiveEnd(objectType.getName(), name, output, tabs, index,o==_object);
             }
         }
     }
