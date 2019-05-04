@@ -1,4 +1,4 @@
-package Clases;
+package test1;
 
 public class primitiveExample {
     private int anInt;
