@@ -5,8 +5,16 @@ import java.util.List;
 public class Person {
 
     
-    public boolean Equals(Person p){
-        return age==p.age;
+    public boolean eq(Person p){
+        boolean b=
+            age==p.age &&
+                childs==p.childs &&
+                telephone==p.telephone &&
+                rate==p.rate &&
+                name==p.name;
+        for(int i=0;i<ratingHistory.size();i++)
+            b=b && ratingHistory.get(i).equals(p.ratingHistory.get(i));
+        return b;
     }
     public Person(int age, int telephone, Company company, String[] childs,
                   List<Integer> ratingHistory, float rate, String name) {

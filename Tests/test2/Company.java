@@ -7,7 +7,14 @@ public class Company {
     private String companyName;
     private ArrayList<Person> persons;
     private long budget;
-
+    
+    public boolean eq(Company o) {
+        boolean b = companyName.equals(o.companyName) && budget==o.budget;
+        for (int i=0;i<persons.size();i++)
+            b=b && persons.get(i).eq(o.persons.get(i));
+        return b;
+    }
+    
     public Company(String companyName, long budget) {
         this.budget = budget;
         this.companyName = companyName;

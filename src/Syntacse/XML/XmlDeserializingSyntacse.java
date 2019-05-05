@@ -134,7 +134,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
             String str = "";
             for (int i = start; i < start + length; ++i) {
                 str += c[i];
-                if (c[i] != '\n' && c[i] != '\t' &&  c[i]!=' ')
+                if (c[i] != '\n' && c[i] != '\t' && c[i] != ' ')
                     check = true;
             }
             if (!check)
@@ -206,15 +206,36 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
                 if (indexString != null) {
                     dfsVoid.push(new Indexer(Integer.parseInt(indexString), dfs.peek()));
                 }
-            }else
-            if ("array".equals(qName)) {
+            } else if ("array".equals(qName)) {
                 try {
                     String id = attributes.getValue("id");
                     int length = Integer.parseInt(attributes.getValue("length"));
-                    Class cl = Class.forName(attributes.getValue("class"));
-                    Object o=Array.newInstance(cl,length);
+                    String className=attributes.getValue("class");
+                    Class cl=null;
+                    if("byte".equals(className)){
+                        cl=byte.class;
+                    }else if("int".equals(className)){
+                        cl=int.class;
+                    }else if("boolean".equals(className)){
+                        cl=boolean.class;
+                    }else if("short".equals(className)){
+                        cl=short.class;
+                    }else if("double".equals(className)){
+                        cl=double.class;
+                    }else if("float".equals(className)){
+                        cl=float.class;
+                    }else if("char".equals(className)){
+                        cl=char.class;
+                    }else if("long".equals(className)){
+                        cl=long.class;
+                    }else if("string".equals(className)){
+                        cl=String.class;
+                    }else
+                        cl = Class.forName(className);
+
+                    Object o = Array.newInstance(cl, length);
                     dfs.push(o);
-                    objectMap.put(id,o);
+                    objectMap.put(id, o);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }

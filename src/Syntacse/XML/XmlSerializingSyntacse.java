@@ -27,29 +27,25 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
         for (int i = 0; i < tabs; i++)
             tabString += '\t';
         
-        if(type.equals("Integer"))
+        if("Integer".equals(type))
             type="int";
-        else if(type.equals("Boolean"))
+        else if("Boolean".equals(type))
             type="boolean";
-        else if(type.equals("Short"))
+        else if("Short".equals(type))
             type="short";
-        else if(type.equals("Double"))
+        else if("Double".equals(type))
             type="double";
-        else if(type.equals("Float"))
+        else if("Float".equals(type))
             type="float";
-        else if(type.equals("Byte"))
+        else if("Byte".equals(type))
             type="byte";
-        else if(type.equals("Character"))
+        else if("Character".equals(type))
             type="char";
-        else if(type.equals("Long"))
+        else if("Long".equals(type))
             type="long";
-        else if(type.equals("String"))
+        else if("String".equals(type))
             type="string";
-    
-    
-    
-    
-    
+        
         if (!begin) {
             if (index != -1)
                 output.write(tabString + "<void index=\"" + index + "\">\n");
@@ -110,8 +106,8 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
         } else {
             begin = false;
         }
-        String substring=type.substring(2,type.length()-1);
-        output.write(tabString + "<array class=\"" + substring + "\" id=\"" + id + "\" length=\"" + length + "\">" + "\n");
+        
+        output.write(tabString + "<array class=\"" + type + "\" id=\"" + id + "\" length=\"" + length + "\">" + "\n");
     }
     
     @Override

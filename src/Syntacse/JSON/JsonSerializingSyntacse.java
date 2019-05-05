@@ -1,8 +1,62 @@
-//package Syntacse;
+//package Syntacse.JSON;
 //
-//import SyntacseForSerializing.SyntacseForSerializing;
 //
-//public class JsonMaker extends SyntacseForSerializing {
+//import SyntacseForSerializing.SerializingSyntacse;
+//
+//import java.io.FileWriter;
+//import java.io.IOException;
+//
+//public class JsonMaker implements SerializingSyntacse {
+//
+//    @Override
+//    public void header(FileWriter output, int tabs) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void end(FileWriter output, int tabs) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void primitive(String type, String name, Object param, FileWriter output, int tabs, int index) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs, int index, boolean superObject) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index, boolean superObject) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void arrayBegin(String type, String name, FileWriter output, String id, int tabs, int index, int length) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void arrayEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void itarableBegin(String type, String name, FileWriter output, String id, int tabs, int index) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void iterableEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException {
+//
+//    }
+//
+//    @Override
+//    public void reference(String type, String name, String id, FileWriter output, int tabs, int index) throws IOException {
+//
+//    }
 //
 //    @Override
 //    public void header(StringBuilder output, int tabs) {

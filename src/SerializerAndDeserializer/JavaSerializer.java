@@ -79,7 +79,8 @@ public class JavaSerializer {
      * @return string with description of primitive
      */
     private void primitiveToString(FileWriter output, String name, Object o, int tabs, int index) throws IOException {
-        _serializingSyntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
+        if(o!=null)
+            _serializingSyntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
     }
     
     private void nonPrimitiveToString(FileWriter output, String name, Object o, int tabs, int index)
@@ -94,40 +95,47 @@ public class JavaSerializer {
         if (o.getClass().isArray()) {
             objectList.add(o);
             idList.add(objectType.getSimpleName() + "" + idList.size());
-            _serializingSyntacse.arrayBegin(objectType.getName(), name, output,
-                objectType.getSimpleName() + "" + idList.size(), tabs, index, ((Object[]) o).length);
             
             if (objectType == byte[].class) {
+                _serializingSyntacse.arrayBegin(byte.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((byte[]) o).length);
                 for (int i = 0; i < ((byte[]) o).length; i++)
                     primitiveToString(output, "", ((byte[]) o)[i], tabs + 1, i);
             } else if (objectType == short[].class) {
+                _serializingSyntacse.arrayBegin(short.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((short[]) o).length);
                 for (int i = 0; i < ((short[]) o).length; i++)
                     primitiveToString(output, "", ((short[]) o)[i], tabs + 1, i);
             } else if (objectType == int[].class) {
+                _serializingSyntacse.arrayBegin(int.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((int[]) o).length);
                 for (int i = 0; i < ((int[]) o).length; i++)
                     primitiveToString(output, "", ((int[]) o)[i], tabs + 1, i);
             } else if (objectType == long[].class) {
+                _serializingSyntacse.arrayBegin(long.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((long[]) o).length);
                 for (int i = 0; i < ((long[]) o).length; i++)
                     primitiveToString(output, "", ((long[]) o)[i], tabs + 1, i);
             } else if (objectType == char[].class) {
+                _serializingSyntacse.arrayBegin(char.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((char[]) o).length);
                 for (int i = 0; i < ((char[]) o).length; i++)
                     primitiveToString(output, "", ((char[]) o)[i], tabs + 1, i);
             } else if (objectType == float[].class) {
+                _serializingSyntacse.arrayBegin(float.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((float[]) o).length);
                 for (int i = 0; i < ((float[]) o).length; i++)
                     primitiveToString(output, "", ((float[]) o)[i], tabs + 1, i);
             } else if (objectType == double[].class) {
+                _serializingSyntacse.arrayBegin(double.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((double[]) o).length);
                 for (int i = 0; i < ((double[]) o).length; i++)
                     primitiveToString(output, "", ((double[]) o)[i], tabs + 1, i);
             } else if (objectType == boolean[].class) {
+                _serializingSyntacse.arrayBegin(boolean.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((boolean[]) o).length);
                 for (int i = 0; i < ((boolean[]) o).length; i++)
                     primitiveToString(output, "", ((boolean[]) o)[i], tabs + 1, i);
             } else if (objectType == String[].class) {
+                _serializingSyntacse.arrayBegin(String.class.getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((String[]) o).length);
                 for (int i = 0; i < ((String[]) o).length; i++)
                     primitiveToString(output, "", ((String[]) o)[i], tabs + 1, i);
             } else {
-                for (int i = 0; i < ((Object[]) o).length; i++) {
+                _serializingSyntacse.arrayBegin(((Object[])o)[0].getClass().getName(), name, output, objectType.getSimpleName() + "" + idList.size(), tabs, index, ((Object[]) o).length);
+                for (int i = 0; i < ((Object[]) o).length; i++)
                     nonPrimitiveToString(output, "", ((Object[]) o)[i], tabs + 1, i);
-                }
             }
             _serializingSyntacse.arrayEnd(objectType.getName(), name, output, tabs, index);
         } else if (o instanceof Iterable) {
