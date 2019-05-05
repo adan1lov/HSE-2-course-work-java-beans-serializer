@@ -7,6 +7,7 @@ import org.xml.sax.SAXException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+//TODO: Comments and deserialization without parse
 public class JavaDeserializer {
     
     public JavaDeserializer(){ }
