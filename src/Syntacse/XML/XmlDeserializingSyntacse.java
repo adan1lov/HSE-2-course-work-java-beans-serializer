@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.Stack;
 
 public class XmlDeserializingSyntacse implements DeserializationSyntacseWithParse {
-    SAXParser parser;
-    Object object = null;
-    Map<String, Object> objectMap = new HashMap<>();
+    private SAXParser parser;
+    private Object object = null;
+    private Map<String, Object> objectMap = new HashMap<>();
     
-    public XmlDeserializingSyntacse() throws ParserConfigurationException, SAXException, IOException {
+    public XmlDeserializingSyntacse() throws ParserConfigurationException, SAXException {
         parser = SAXParserFactory.newInstance().newSAXParser();
     }
     
@@ -54,11 +54,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
         public void invoke(Object o) {
             try {
                 fromObject.getClass().getMethod(name, Object.class).invoke(fromObject, o);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
+            } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
                 e.printStackTrace();
             }
         }
@@ -78,9 +74,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
         public void invoke(Object o) {
             try {
                 propertyDescriptor.getWriteMethod().invoke(fromObject, o);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
+            } catch (IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
@@ -126,17 +120,17 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
         Stack<Invoker> dfsVoid = new Stack<>();
         
         @Override
-        public void characters(char[] c, int start, int length)
-            throws SAXException {
+        public void characters(char[] c, int start, int length) {
             if (dfs.empty())
                 return;
             boolean check = false;
-            String str = "";
+            StringBuilder strBuilder = new StringBuilder();
             for (int i = start; i < start + length; ++i) {
-                str += c[i];
+                strBuilder.append(c[i]);
                 if (c[i] != '\n' && c[i] != '\t' && c[i] != ' ')
                     check = true;
             }
+            String str = strBuilder.toString();
             if (!check)
                 return;
             Object o = dfs.pop();
@@ -163,7 +157,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
         }
         
         @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        public void startElement(String uri, String localName, String qName, Attributes attributes) {
             if ("object".equals(qName)) {
                 String reference = attributes.getValue("idref");
                 if (reference != null) {
@@ -177,11 +171,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
                             object = o;
                         objectMap.put(id, o);
                         dfs.push(o);
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InstantiationException e) {
+                    } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
                         e.printStackTrace();
                     }
                 }
@@ -211,27 +201,17 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
                     String id = attributes.getValue("id");
                     int length = Integer.parseInt(attributes.getValue("length"));
                     String className=attributes.getValue("class");
-                    Class cl=null;
-                    if("byte".equals(className)){
-                        cl=byte.class;
-                    }else if("int".equals(className)){
-                        cl=int.class;
-                    }else if("boolean".equals(className)){
-                        cl=boolean.class;
-                    }else if("short".equals(className)){
-                        cl=short.class;
-                    }else if("double".equals(className)){
-                        cl=double.class;
-                    }else if("float".equals(className)){
-                        cl=float.class;
-                    }else if("char".equals(className)){
-                        cl=char.class;
-                    }else if("long".equals(className)){
-                        cl=long.class;
-                    }else if("string".equals(className)){
-                        cl=String.class;
-                    }else
-                        cl = Class.forName(className);
+                    Class cl;
+                    if("byte".equals(className)) cl = byte.class;
+                    else if("int".equals(className)) cl = int.class;
+                    else if("boolean".equals(className)) cl = boolean.class;
+                    else if("short".equals(className)) cl = short.class;
+                    else if("double".equals(className)) cl = double.class;
+                    else if("float".equals(className)) cl = float.class;
+                    else if("char".equals(className)) cl = char.class;
+                    else if("long".equals(className)) cl = long.class;
+                    else if("string".equals(className)) cl = String.class;
+                    else cl = Class.forName(className);
 
                     Object o = Array.newInstance(cl, length);
                     dfs.push(o);
@@ -257,14 +237,11 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
                 dfs.push((char) 0);
             } else if ("string".equals(qName)) {
                 dfs.push("");
-            } else if ("java".equals(qName)) {
-            
             }
         }
         
         @Override
-        public void endElement(String uri, String localName, String qName)
-            throws SAXException {
+        public void endElement(String uri, String localName, String qName) {
             if ("void".equals(qName))
                 dfsVoid.pop().invoke(dfs.pop());
         }

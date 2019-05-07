@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class XmlSerializingSyntacse implements SerializingSyntacse {
     
-    boolean begin = true;
+    private boolean begin = true;
     
     @Override
     public void header(FileWriter output, int tabs) throws IOException {
@@ -23,28 +23,20 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
     @Override
     public void primitive(String type, String name, Object param, FileWriter output, int tabs, int index) throws IOException {
         
-        String tabString = "";
+        StringBuilder tabStringBuilder = new StringBuilder();
         for (int i = 0; i < tabs; i++)
-            tabString += '\t';
+            tabStringBuilder.append("\t");
+        String tabString = tabStringBuilder.toString();
         
-        if("Integer".equals(type))
-            type="int";
-        else if("Boolean".equals(type))
-            type="boolean";
-        else if("Short".equals(type))
-            type="short";
-        else if("Double".equals(type))
-            type="double";
-        else if("Float".equals(type))
-            type="float";
-        else if("Byte".equals(type))
-            type="byte";
-        else if("Character".equals(type))
-            type="char";
-        else if("Long".equals(type))
-            type="long";
-        else if("String".equals(type))
-            type="string";
+        if ("Integer".equals(type)) type = "int";
+        else if ("Boolean".equals(type)) type = "boolean";
+        else if ("Short".equals(type)) type = "short";
+        else if ("Double".equals(type)) type = "double";
+        else if ("Float".equals(type)) type = "float";
+        else if ("Byte".equals(type)) type = "byte";
+        else if ("Character".equals(type)) type = "char";
+        else if ("Long".equals(type)) type = "long";
+        else if ("String".equals(type)) type = "string";
         
         if (!begin) {
             if (index != -1)
@@ -83,11 +75,12 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
     
     @Override
     public void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index, boolean superObject) throws IOException {
-        String tabString = "";
+        StringBuilder tabStringBuilder = new StringBuilder();
         for (int i = 0; i < tabs; i++)
-            tabString += '\t';
+            tabStringBuilder.append('\t');
+        String tabString = tabStringBuilder.toString();
         output.write(tabString + "</object>\n");
-        if(!superObject)
+        if (!superObject)
             output.write(tabString + "</void>\n");
     }
     
@@ -112,13 +105,14 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
     
     @Override
     public void arrayEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException {
-        String tabString = "";
+        StringBuilder tabStringBuilder = new StringBuilder();
         for (int i = 0; i < tabs; i++)
-            tabString += '\t';
-        
-        
+            tabStringBuilder.append('\t');
+        String tabString = tabStringBuilder.toString();
+    
+    
         output.write(tabString + "</array>\n");
-        if(index!=-2)
+        if (index != -2)
             output.write(tabString + "</void>\n");
     }
     
@@ -148,13 +142,14 @@ public class XmlSerializingSyntacse implements SerializingSyntacse {
     
     @Override
     public void iterableEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException {
-        String tabString = "";
-        
+    
+        StringBuilder tabStringBuilder = new StringBuilder();
         for (int i = 0; i < tabs; i++)
-            tabString += '\t';
+            tabStringBuilder.append('\t');
+        String tabString = tabStringBuilder.toString();
         output.write(tabString + "</object>\n");
-        if(index!=-2)
-        output.write(tabString + "</void>\n");
+        if (index != -2)
+            output.write(tabString + "</void>\n");
     }
     
     @Override

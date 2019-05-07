@@ -35,7 +35,7 @@ class JavaSerializerTest {
             primitiveExample.setaChar('2');
             primitiveExample.setaDouble(3d);
             primitiveExample.setaFloat(4f);
-            primitiveExample.setaLong(5l);
+            primitiveExample.setaLong(5L);
             primitiveExample.setAnInt(6);
             primitiveExample.setaShort((short) 7);
             primitiveExample.setaString("8");
@@ -45,7 +45,7 @@ class JavaSerializerTest {
             FileInputStream fileInputStream= new FileInputStream("test1.xml");
             JavaDeserializer javaDeserializer= new JavaDeserializer();
             PrimitiveExample pe=(PrimitiveExample)javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
-            Assertions.assertEquals(true, pe.eq(primitiveExample));
+            Assertions.assertTrue(pe.eq(primitiveExample));
     
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,6 +94,7 @@ class JavaSerializerTest {
         JavaDeserializer javaDeserializer= new JavaDeserializer();
         Company company2=(Company)javaDeserializer.Make(fileInputStream1, new XmlDeserializingSyntacse());
         Assertions.assertEquals(company.eq(company1),company.eq(company2));
+        System.out.println("all ok");
     }
     
     @Test
@@ -118,7 +119,7 @@ class JavaSerializerTest {
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
         Arrays pe=(Arrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
-        Assertions.assertEquals(true, pe.eq(arrays));
+        Assertions.assertTrue(pe.eq(arrays));
     }
     
     @Test
@@ -143,7 +144,7 @@ class JavaSerializerTest {
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
         ArraysInArrays pe=(ArraysInArrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
-        Assertions.assertEquals(true, pe.eq(arrays));
+        Assertions.assertTrue(pe.eq(arrays));
     }
     
     
@@ -160,6 +161,7 @@ class JavaSerializerTest {
         FileInputStream fileInputStream= new FileInputStream("test5.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
         CyclicGraph pe=(CyclicGraph) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
-        Assertions.assertEquals(true, pe==pe.getCyclicGraph().getCyclicGraph());
+        Assertions.assertSame(pe, pe.getCyclicGraph().getCyclicGraph());
     }
+    
 }

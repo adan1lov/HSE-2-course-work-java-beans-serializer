@@ -26,8 +26,8 @@ public class JavaSerializer {
     
     private Object _object;
     private SerializingSyntacse _serializingSyntacse;
-    List<Object> objectList;
-    List<String> idList;
+    private List<Object> objectList;
+    private List<String> idList;
     
     /*---------------------------------------------------Constructor--------------------------------------------------*/
     
@@ -143,9 +143,8 @@ public class JavaSerializer {
             idList.add(objectType.getSimpleName() + "" + idList.size());
             _serializingSyntacse.itarableBegin(objectType.getName(), name, output, objectType.getSimpleName() + "" +
                 (idList.size() - 1), tabs, index);
-            Iterator iterator = ((Iterable) o).iterator();
-            while (iterator.hasNext()) {
-                nonPrimitiveToString(output, "", iterator.next(), tabs + 1, index);
+            for (Object value : ((Iterable) o)) {
+                nonPrimitiveToString(output, "", value, tabs + 1, index);
             }
             _serializingSyntacse.iterableEnd(objectType.getName(), name, output, tabs, index);
             
