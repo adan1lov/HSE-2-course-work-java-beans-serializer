@@ -3,6 +3,7 @@ package SerializerAndDeserializer;
 
 import Syntacse.XML.XmlDeserializingSyntacse;
 import Syntacse.XML.XmlSerializingSyntacse;
+import java.io.FileOutputStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
@@ -29,7 +30,7 @@ class JavaSerializerTest {
         try {
             PrimitiveExample primitiveExample = new PrimitiveExample();
             JavaSerializer serializer = new JavaSerializer(primitiveExample);
-            serializer.Make(new FileWriter("test1.xml"), new XmlSerializingSyntacse());
+            serializer.Make(new FileOutputStream("test1.xml"), new XmlSerializingSyntacse());
             primitiveExample.setaBoolean(true);
             primitiveExample.setaByte((byte) 1);
             primitiveExample.setaChar('2');
@@ -39,7 +40,7 @@ class JavaSerializerTest {
             primitiveExample.setAnInt(6);
             primitiveExample.setaShort((short) 7);
             primitiveExample.setaString("8");
-            FileWriter fileWriter=new FileWriter("test1.xml");
+            FileOutputStream fileWriter=new FileOutputStream("test1.xml");
             serializer.Make(fileWriter,new XmlSerializingSyntacse());
             fileWriter.close();
             FileInputStream fileInputStream= new FileInputStream("test1.xml");
@@ -83,7 +84,7 @@ class JavaSerializerTest {
         company.getPersons().add(p3);
         
         JavaSerializer javaSerializer= new JavaSerializer(company);
-        FileWriter fileWriter=new FileWriter("test2.xml");
+        FileOutputStream fileWriter=new FileOutputStream("test2.xml");
         javaSerializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
         FileInputStream fileInputStream=new FileInputStream("test2.xml");
@@ -101,7 +102,7 @@ class JavaSerializerTest {
     void arraysTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
         Arrays arrays= new Arrays();
         JavaSerializer serializer = new JavaSerializer(arrays);
-        FileWriter fileWriter=new FileWriter("test3.xml");
+        FileOutputStream fileWriter=new FileOutputStream("test3.xml");
         serializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
         arrays.setaBoolean(new boolean[]{true, false});
@@ -113,7 +114,7 @@ class JavaSerializerTest {
         arrays.setAnInt(new int[]{6,6});
         arrays.setaShort(new short[]{7,7});
         arrays.setaString(new String[]{"hello","world"});
-        fileWriter=new FileWriter("test3.xml");
+        fileWriter=new FileOutputStream("test3.xml");
         serializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
@@ -126,7 +127,7 @@ class JavaSerializerTest {
     void arraysInArraysTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
         ArraysInArrays arrays= new ArraysInArrays();
         JavaSerializer serializer=new JavaSerializer(arrays);
-        FileWriter fileWriter= new FileWriter("test4.xml");
+        FileOutputStream fileWriter= new FileOutputStream("test4.xml");
         serializer.Make(fileWriter, new XmlSerializingSyntacse());
         fileWriter.close();
         arrays.setaBoolean(new boolean[][]{new boolean[]{true, false}});
@@ -138,7 +139,7 @@ class JavaSerializerTest {
         arrays.setAnInt(new int[][]{new int[]{6, 6}});
         arrays.setaShort(new short[][]{new short[]{7, 7}});
         arrays.setaString(new String[][]{new String[]{"hello", "world"}});
-        fileWriter=new FileWriter("test3.xml");
+        fileWriter=new FileOutputStream("test3.xml");
         serializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
@@ -155,7 +156,7 @@ class JavaSerializerTest {
         c1.setCyclicGraph(c2);
         c2.setCyclicGraph(c1);
         JavaSerializer serializer= new JavaSerializer(c1);
-        FileWriter fileWriter=new FileWriter("test5.xml");
+        FileOutputStream fileWriter=new FileOutputStream("test5.xml");
         serializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test5.xml");

@@ -7,6 +7,7 @@ import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -50,7 +51,7 @@ public class JavaSerializer {
      * @param writer writer in file
      * @param s    syntacse of serialization
      */
-    public void Make(FileWriter writer, SerializingSyntacse s)
+    public void Make(FileOutputStream writer, SerializingSyntacse s)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
     
         //syntacse that we would use
@@ -78,12 +79,12 @@ public class JavaSerializer {
      *
      * @return string with description of primitive
      */
-    private void primitiveToString(FileWriter output, String name, Object o, int tabs, int index) throws IOException {
+    private void primitiveToString(FileOutputStream output, String name, Object o, int tabs, int index) throws IOException {
         if(o!=null)
             _serializingSyntacse.primitive(o.getClass().getSimpleName(), name, o, output, tabs, index);
     }
     
-    private void nonPrimitiveToString(FileWriter output, String name, Object o, int tabs, int index)
+    private void nonPrimitiveToString(FileOutputStream output, String name, Object o, int tabs, int index)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
         for (int i = 0; i < objectList.size(); i++) {
             if (objectList.get(i) == o) {

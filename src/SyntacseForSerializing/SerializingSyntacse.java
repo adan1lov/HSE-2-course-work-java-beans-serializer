@@ -1,5 +1,6 @@
 package SyntacseForSerializing;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -14,6 +15,8 @@ import java.io.IOException;
  * @see SerializerAndDeserializer.JavaSerializer
  */
 public interface SerializingSyntacse {
+
+    boolean hasReferense();
     /**
      * Some of formats had header for example XML. This method writes down header
      *
@@ -22,7 +25,7 @@ public interface SerializingSyntacse {
      *
      * @throws IOException file problem exception
      */
-    void header(FileWriter output, int tabs) throws IOException;
+    void header(FileOutputStream output, int tabs) throws IOException;
     
     /**
      * Some of formats had end. This method writes down header
@@ -32,7 +35,7 @@ public interface SerializingSyntacse {
      *
      * @throws IOException file problem exception
      */
-    void end(FileWriter output, int tabs) throws IOException;
+    void end(FileOutputStream output, int tabs) throws IOException;
     
     /**
      * This method used to write a primitive types
@@ -46,7 +49,7 @@ public interface SerializingSyntacse {
      *
      * @throws IOException file problem exception
      */
-    void primitive(String type, String name, Object param, FileWriter output, int tabs, int index) throws IOException;
+    void primitive(String type, String name, Object param, FileOutputStream output, int tabs, int index) throws IOException;
     
     /**
      *
@@ -59,7 +62,7 @@ public interface SerializingSyntacse {
      * @param superObject
      * @throws IOException
      */
-    void nonPrimitiveBegin(String type, String name, FileWriter output, String id, int tabs, int index, boolean superObject) throws IOException;
+    void nonPrimitiveBegin(String type, String name, FileOutputStream output, String id, int tabs, int index, boolean superObject) throws IOException;
     
     /**
      *
@@ -71,7 +74,7 @@ public interface SerializingSyntacse {
      * @param superObject
      * @throws IOException
      */
-    void nonPrimitiveEnd(String type, String name, FileWriter output, int tabs, int index, boolean superObject) throws IOException;
+    void nonPrimitiveEnd(String type, String name, FileOutputStream output, int tabs, int index, boolean superObject) throws IOException;
     
     /**
      *
@@ -84,7 +87,7 @@ public interface SerializingSyntacse {
      * @param length
      * @throws IOException
      */
-    void arrayBegin(String type, String name, FileWriter output, String id, int tabs, int index, int length) throws IOException;
+    void arrayBegin(String type, String name, FileOutputStream output, String id, int tabs, int index, int length) throws IOException;
     
     /**
      *
@@ -95,7 +98,7 @@ public interface SerializingSyntacse {
      * @param index
      * @throws IOException
      */
-    void arrayEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException;
+    void arrayEnd(String type, String name, FileOutputStream output, int tabs, int index) throws IOException;
     
     /**
      *
@@ -107,7 +110,7 @@ public interface SerializingSyntacse {
      * @param index
      * @throws IOException
      */
-    void itarableBegin(String type, String name, FileWriter output, String id, int tabs, int index) throws IOException;
+    void itarableBegin(String type, String name, FileOutputStream output, String id, int tabs, int index) throws IOException;
     
     /**
      *
@@ -118,7 +121,7 @@ public interface SerializingSyntacse {
      * @param index
      * @throws IOException
      */
-    void iterableEnd(String type, String name, FileWriter output, int tabs, int index) throws IOException;
+    void iterableEnd(String type, String name, FileOutputStream output, int tabs, int index) throws IOException;
     
     /**
      *
@@ -130,6 +133,6 @@ public interface SerializingSyntacse {
      * @param index
      * @throws IOException
      */
-    void reference(String type, String name, String id, FileWriter output, int tabs, int index) throws IOException;
+    void reference(String type, String name, String id, FileOutputStream output, int tabs, int index) throws IOException;
     
 }
