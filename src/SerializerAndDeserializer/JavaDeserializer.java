@@ -28,7 +28,7 @@ public class JavaDeserializer {
             DeserializationSyntacseWithoutParse des =(DeserializationSyntacseWithoutParse)deserializingSyntacse;
             des.setStream(stream);
             des.removeHeader();
-            Object o=des.readObject(    );
+            Object o=des.readObject();
         }
         return null;
     }
