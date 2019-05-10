@@ -31,8 +31,12 @@ public class XMLDeserializerDOM implements DeserializationSyntacseWithoutParse {
     }
 
     @Override
-    public Object readObject() {
-
+    public Object readObject(boolean goDown) {
+        dfs.peek().geta
+    }
+    
+    public Object readPrimitive(){
+        return null;
     }
 
     @Override
