@@ -1,7 +1,7 @@
 package SerializerAndDeserializer;
-//TODO: I need more tests
 
-import Syntacse.XML.XmlDeserializingSyntacse;
+import Syntacse.XML.XMLDeserializerDOM;
+import Syntacse.XML.XmlDeserializingSAX;
 import Syntacse.XML.XmlSerializingSyntacse;
 import java.io.FileOutputStream;
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +18,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ class JavaSerializerTest {
             fileWriter.close();
             FileInputStream fileInputStream= new FileInputStream("test1.xml");
             JavaDeserializer javaDeserializer= new JavaDeserializer();
-            PrimitiveExample pe=(PrimitiveExample)javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
+            PrimitiveExample pe=(PrimitiveExample)javaDeserializer.Make(fileInputStream, new XmlDeserializingSAX());
             Assertions.assertTrue(pe.eq(primitiveExample));
     
         } catch (Exception e) {
@@ -87,13 +86,18 @@ class JavaSerializerTest {
         FileOutputStream fileWriter=new FileOutputStream("test2.xml");
         javaSerializer.Make(fileWriter,new XmlSerializingSyntacse());
         fileWriter.close();
+        Long start=System.currentTimeMillis();
         FileInputStream fileInputStream=new FileInputStream("test2.xml");
         XMLDecoder xmlDecoder= new XMLDecoder(fileInputStream);
         Company company1=(Company)xmlDecoder.readObject();
         fileInputStream.close();
+        Long end=System.currentTimeMillis();
+        Long start2=System.currentTimeMillis();
         FileInputStream fileInputStream1= new FileInputStream("test2.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
-        Company company2=(Company)javaDeserializer.Make(fileInputStream1, new XmlDeserializingSyntacse());
+        Company company2=(Company)javaDeserializer.Make(fileInputStream1, new XMLDeserializerDOM());
+        Long end2=System.currentTimeMillis();
+        System.out.println((end-start) +"\t"+(end2-start2));
         Assertions.assertEquals(company.eq(company1),company.eq(company2));
         System.out.println("all ok");
     }
@@ -119,7 +123,7 @@ class JavaSerializerTest {
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
-        Arrays pe=(Arrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
+        Arrays pe=(Arrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSAX());
         Assertions.assertTrue(pe.eq(arrays));
     }
     
@@ -144,7 +148,7 @@ class JavaSerializerTest {
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test3.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
-        ArraysInArrays pe=(ArraysInArrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
+        ArraysInArrays pe=(ArraysInArrays) javaDeserializer.Make(fileInputStream, new XmlDeserializingSAX());
         Assertions.assertTrue(pe.eq(arrays));
     }
     
@@ -161,7 +165,7 @@ class JavaSerializerTest {
         fileWriter.close();
         FileInputStream fileInputStream= new FileInputStream("test5.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
-        CyclicGraph pe=(CyclicGraph) javaDeserializer.Make(fileInputStream, new XmlDeserializingSyntacse());
+        CyclicGraph pe=(CyclicGraph) javaDeserializer.Make(fileInputStream, new XmlDeserializingSAX());
         Assertions.assertSame(pe, pe.getCyclicGraph().getCyclicGraph());
     }
     

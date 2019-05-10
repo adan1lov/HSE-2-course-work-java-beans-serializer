@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-public class XmlDeserializingSyntacse implements DeserializationSyntacseWithParse {
+public class XmlDeserializingSAX implements DeserializationSyntacseWithParse {
     private SAXParser parser;
     private Object object = null;
     private Map<String, Object> objectMap = new HashMap<>();
     
-    public XmlDeserializingSyntacse() throws ParserConfigurationException, SAXException {
+    public XmlDeserializingSAX() throws ParserConfigurationException, SAXException {
         parser = SAXParserFactory.newInstance().newSAXParser();
     }
     
@@ -158,24 +158,7 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
         
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) {
-            if ("object".equals(qName)) {
-                String reference = attributes.getValue("idref");
-                if (reference != null) {
-                    dfs.push(objectMap.get(reference));
-                } else {
-                    String id = attributes.getValue("id");
-                    try {
-                        Class cl = Class.forName(attributes.getValue("class"));
-                        Object o = cl.newInstance();
-                        if (dfs.empty() && objectMap.isEmpty())
-                            object = o;
-                        objectMap.put(id, o);
-                        dfs.push(o);
-                    } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-                        e.printStackTrace();
-                    }
-                }
-            } else if ("void".equals(qName)) {
+            if ("void".equals(qName)) {
                 String methodName = attributes.getValue("method");
                 if (methodName != null) {
                     dfsVoid.push(new MethodInvoker(methodName, dfs.peek()));
@@ -196,7 +179,24 @@ public class XmlDeserializingSyntacse implements DeserializationSyntacseWithPars
                 if (indexString != null) {
                     dfsVoid.push(new Indexer(Integer.parseInt(indexString), dfs.peek()));
                 }
-            } else if ("array".equals(qName)) {
+            } else if ("object".equals(qName)) {
+                String reference = attributes.getValue("idref");
+                if (reference != null) {
+                    dfs.push(objectMap.get(reference));
+                } else {
+                    String id = attributes.getValue("id");
+                    try {
+                        Class cl = Class.forName(attributes.getValue("class"));
+                        Object o = cl.newInstance();
+                        if (dfs.empty() && objectMap.isEmpty())
+                            object = o;
+                        objectMap.put(id, o);
+                        dfs.push(o);
+                    } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else  if ("array".equals(qName)) {
                 try {
                     String id = attributes.getValue("id");
                     int length = Integer.parseInt(attributes.getValue("length"));

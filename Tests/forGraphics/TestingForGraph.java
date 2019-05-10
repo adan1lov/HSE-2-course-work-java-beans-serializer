@@ -1,6 +1,8 @@
 package forGraphics;
 
+import SerializerAndDeserializer.JavaDeserializer;
 import SerializerAndDeserializer.JavaSerializer;
+import Syntacse.XML.XmlDeserializingSAX;
 import Syntacse.XML.XmlSerializingSyntacse;
 import forGraphics.Classes.ClassWith0Fields;
 import forGraphics.Classes.ClassWith1Fields;
@@ -13,11 +15,15 @@ import forGraphics.Classes.ClassWith7Fields;
 import forGraphics.Classes.ClassWith8Fields;
 import forGraphics.Classes.ClassWith9Fields;
 import java.beans.IntrospectionException;
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import javax.xml.parsers.ParserConfigurationException;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 public class TestingForGraph {
     @Test
@@ -51,7 +57,8 @@ public class TestingForGraph {
         }
     }
     @Test
-    public void fieldTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException {
+    public void fieldTest()
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
 
         ClassWith0Fields cl0=new ClassWith0Fields();
         ClassWith1Fields cl1=new ClassWith1Fields();
@@ -69,25 +76,36 @@ public class TestingForGraph {
         
         for (int i = 0; i < 10; i++) {
             Long start = System.currentTimeMillis();
-            for (int j = 0; j < 1; j++) {
                 FileOutputStream fileWriter=new FileOutputStream("cl/numOfFields" + i+".txt");
                 JavaSerializer javaSerializer = new JavaSerializer(objects[i]);
                 javaSerializer.Make(fileWriter, new XmlSerializingSyntacse());
                 fileWriter.flush();
                 fileWriter.close();
-            }
             Long end =System.currentTimeMillis();
+
             Long start2 = System.currentTimeMillis();
-            for (int j = 0; j < 1; j++) {
                 FileOutputStream fileOutputStream =new FileOutputStream("cl/num"+i+".txt");
                 XMLEncoder xmlEncoder= new XMLEncoder(fileOutputStream);
                 xmlEncoder.writeObject(objects[i]);
                 xmlEncoder.close();
                 fileOutputStream.flush();
                 fileOutputStream.close();
-            }
             Long end2 =System.currentTimeMillis();
-            System.out.println("numof fields "+(long)Math.pow(2,i+3)+"\t"+(end-start)+"\t"+(end2-start2));
+
+            Long start3=System.currentTimeMillis();
+            FileInputStream fileInputStream1= new FileInputStream("cl/numOfFields" + i+".txt");
+            JavaDeserializer javaDeserializer= new JavaDeserializer();
+            Object company2=javaDeserializer.Make(fileInputStream1, new XmlDeserializingSAX());
+            Long end3=System.currentTimeMillis();
+
+            Long Start3 =System.currentTimeMillis();
+            FileInputStream fileInputStream=new FileInputStream("cl/num"+i+".txt");
+            XMLDecoder xmlDecoder= new XMLDecoder(fileInputStream);
+            Object company1=xmlDecoder.readObject();
+            fileInputStream.close();
+            Long End3=System.currentTimeMillis();
+
+            System.out.println("numof fields "+(long)Math.pow(2,i+3)+"\t\t\t"+(end-start)+"\t"+(end2-start2)+"\t"+(end3-start3)+"\t"+(End3-Start3));
         }
     }
 }
