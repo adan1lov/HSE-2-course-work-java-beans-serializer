@@ -18432,7 +18432,7 @@ public class ClassWith8Fields {    private long f0;
     public void setF2047(long f2047) {
         this.f2047 = f2047;
     }
-    public ClassWith8Fields(){
+    public void ClassWith8Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

@@ -1152,7 +1152,7 @@ public class ClassWith4Fields {    private long f0;
     public void setF127(long f127) {
         this.f127 = f127;
     }
-    public ClassWith4Fields(){
+    public void ClassWith4Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

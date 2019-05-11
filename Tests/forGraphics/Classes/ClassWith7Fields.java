@@ -9216,7 +9216,7 @@ public class ClassWith7Fields {    private long f0;
     public void setF1023(long f1023) {
         this.f1023 = f1023;
     }
-    public ClassWith7Fields(){
+    public void ClassWith7Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

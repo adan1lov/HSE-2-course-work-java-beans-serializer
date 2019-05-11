@@ -2304,7 +2304,7 @@ public class ClassWith5Fields {    private long f0;
     public void setF255(long f255) {
         this.f255 = f255;
     }
-    public ClassWith5Fields(){
+    public void ClassWith5Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

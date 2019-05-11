@@ -5,6 +5,8 @@ import SyntacseForDeserializing.DeserializationSyntacseWithoutParse;
 import SyntacseForDeserializing.DeserializingSyntacse;
 import java.io.BufferedReader;
 import java.io.File;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,17 +21,12 @@ import java.io.IOException;
 public class JavaDeserializer {
     
     public JavaDeserializer(){ }
-    
+
     public Object Make(FileInputStream stream, DeserializingSyntacse deserializingSyntacse)
-        throws IOException, SAXException, ParserConfigurationException {
-        if(deserializingSyntacse instanceof DeserializationSyntacseWithParse)
+        throws IOException, SAXException, ParserConfigurationException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+        if (deserializingSyntacse instanceof DeserializationSyntacseWithParse)
             return ((DeserializationSyntacseWithParse) deserializingSyntacse).Parse(stream);
-        else {
-            DeserializationSyntacseWithoutParse des =(DeserializationSyntacseWithoutParse)deserializingSyntacse;
-            des.setStream(stream);
-            des.removeHeader();
-            Object o=des.readObject();
-        }
         return null;
+
     }
 }

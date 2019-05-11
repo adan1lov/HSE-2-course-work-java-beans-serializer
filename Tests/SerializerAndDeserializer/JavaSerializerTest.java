@@ -1,8 +1,10 @@
 package SerializerAndDeserializer;
 
-import Syntacse.XML.XMLDeserializerDOM;
+
 import Syntacse.XML.XmlDeserializingSAX;
 import Syntacse.XML.XmlSerializingSyntacse;
+
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +25,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 class JavaSerializerTest {
-    
+
+
     @Test
     void primitiveTests() {
         try {
@@ -53,7 +56,8 @@ class JavaSerializerTest {
     }
     
     @Test
-    void simpleExample() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
+    void simpleExample()
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException, ClassNotFoundException, InstantiationException {
         Company company = new Company("Yandex Taxi", 999999999);
     
         ArrayList<Integer> p1rating = new ArrayList<>();
@@ -61,7 +65,7 @@ class JavaSerializerTest {
         p1rating.add(4);
         p1rating.add(4);
         p1rating.add(5);
-        Person p1 = new Person(21, 2343, company, new String[]{"Боря", "Вася", "Федя"}, p1rating,
+        Person p1 = new Person(21, 2343, company, new String[]{"Б\nоря", "Вася", "Федя"}, p1rating,
             4.5f, "Маша");
     
         ArrayList<Integer> p2rating = new ArrayList<>();
@@ -95,7 +99,7 @@ class JavaSerializerTest {
         Long start2=System.currentTimeMillis();
         FileInputStream fileInputStream1= new FileInputStream("test2.xml");
         JavaDeserializer javaDeserializer= new JavaDeserializer();
-        Company company2=(Company)javaDeserializer.Make(fileInputStream1, new XMLDeserializerDOM());
+        Company company2=(Company)javaDeserializer.Make(fileInputStream1, new XmlDeserializingSAX());
         Long end2=System.currentTimeMillis();
         System.out.println((end-start) +"\t"+(end2-start2));
         Assertions.assertEquals(company.eq(company1),company.eq(company2));
@@ -103,7 +107,8 @@ class JavaSerializerTest {
     }
     
     @Test
-    void arraysTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
+    void arraysTest()
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException, ClassNotFoundException, InstantiationException {
         Arrays arrays= new Arrays();
         JavaSerializer serializer = new JavaSerializer(arrays);
         FileOutputStream fileWriter=new FileOutputStream("test3.xml");
@@ -128,7 +133,8 @@ class JavaSerializerTest {
     }
     
     @Test
-    void arraysInArraysTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
+    void arraysInArraysTest()
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException, ClassNotFoundException, InstantiationException {
         ArraysInArrays arrays= new ArraysInArrays();
         JavaSerializer serializer=new JavaSerializer(arrays);
         FileOutputStream fileWriter= new FileOutputStream("test4.xml");
@@ -154,7 +160,8 @@ class JavaSerializerTest {
     
     
     @Test
-    void cyclicGraphTest() throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
+    void cyclicGraphTest()
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException, ClassNotFoundException, InstantiationException {
         CyclicGraph c1=new CyclicGraph();
         CyclicGraph c2=new CyclicGraph();
         c1.setCyclicGraph(c2);

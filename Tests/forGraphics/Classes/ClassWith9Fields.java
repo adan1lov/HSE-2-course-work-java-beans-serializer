@@ -36864,7 +36864,7 @@ public class ClassWith9Fields {    private long f0;
     public void setF4095(long f4095) {
         this.f4095 = f4095;
     }
-    public ClassWith9Fields(){
+    public void ClassWith9Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

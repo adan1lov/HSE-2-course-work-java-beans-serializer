@@ -4608,7 +4608,7 @@ public class ClassWith6Fields {    private long f0;
     public void setF511(long f511) {
         this.f511 = f511;
     }
-    public ClassWith6Fields(){
+    public void ClassWith6Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

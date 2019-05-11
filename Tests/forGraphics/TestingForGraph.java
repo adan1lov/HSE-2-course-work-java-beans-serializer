@@ -24,6 +24,7 @@ import java.lang.reflect.InvocationTargetException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.junit.Test;
 import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 
 public class TestingForGraph {
     @Test
@@ -58,18 +59,28 @@ public class TestingForGraph {
     }
     @Test
     public void fieldTest()
-        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException {
+        throws IOException, IllegalAccessException, IntrospectionException, InvocationTargetException, ParserConfigurationException, SAXException, ClassNotFoundException, InstantiationException {
 
         ClassWith0Fields cl0=new ClassWith0Fields();
+        cl0.ClassWith0Field();
         ClassWith1Fields cl1=new ClassWith1Fields();
+        cl1.ClassWith1Field();
         ClassWith2Fields cl2=new ClassWith2Fields();
+        cl2.ClassWith2Field();
         ClassWith3Fields cl3=new ClassWith3Fields();
+        cl3.ClassWith3Field();
         ClassWith4Fields cl4=new ClassWith4Fields();
+        cl4.ClassWith4Field();
         ClassWith5Fields cl5=new ClassWith5Fields();
+        cl5.ClassWith5Field();
         ClassWith6Fields cl6=new ClassWith6Fields();
+        cl6.ClassWith6Field();
         ClassWith7Fields cl7=new ClassWith7Fields();
+        cl7.ClassWith7Field();
         ClassWith8Fields cl8=new ClassWith8Fields();
+        cl8.ClassWith8Field();
         ClassWith9Fields cl9=new ClassWith9Fields();
+        cl9.ClassWith9Field();
 
 
         Object[] objects = new Object[]{cl0, cl1, cl2, cl3, cl4, cl5, cl6, cl7, cl8, cl9};

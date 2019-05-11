@@ -144,7 +144,7 @@ public class ClassWith1Fields {    private long f0;
     public void setF15(long f15) {
         this.f15 = f15;
     }
-    public ClassWith1Fields(){
+    public void ClassWith1Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

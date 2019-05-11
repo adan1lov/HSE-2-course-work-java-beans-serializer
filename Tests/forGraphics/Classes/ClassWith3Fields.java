@@ -576,7 +576,7 @@ public class ClassWith3Fields {    private long f0;
     public void setF63(long f63) {
         this.f63 = f63;
     }
-    public ClassWith3Fields(){
+    public void ClassWith3Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

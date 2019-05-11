@@ -288,7 +288,7 @@ public class ClassWith2Fields {    private long f0;
     public void setF31(long f31) {
         this.f31 = f31;
     }
-    public ClassWith2Fields(){
+    public void ClassWith2Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;

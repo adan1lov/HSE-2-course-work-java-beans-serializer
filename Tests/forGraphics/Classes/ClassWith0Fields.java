@@ -72,7 +72,7 @@ public class ClassWith0Fields {    private long f0;
     public void setF7(long f7) {
         this.f7 = f7;
     }
-    public ClassWith0Fields(){
+    public void ClassWith0Field(){
         this.f0=0;
         this.f1=1;
         this.f2=2;
