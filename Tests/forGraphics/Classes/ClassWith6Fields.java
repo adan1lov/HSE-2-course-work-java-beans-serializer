@@ -4608,6 +4608,15 @@ public class ClassWith6Fields {    private long f0;
     public void setF511(long f511) {
         this.f511 = f511;
     }
+    private ClassWith5Fields classWith5Fields;
+
+    public ClassWith5Fields getClassWith5Fields() {
+        return classWith5Fields;
+    }
+
+    public void setClassWith5Fields(ClassWith5Fields classWith4Fields) {
+        this.classWith5Fields = classWith4Fields;
+    }
     public void ClassWith6Field(){
         this.f0=0;
         this.f1=1;

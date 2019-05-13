@@ -1,32 +1,30 @@
 package SerializerAndDeserializer;
 
 import SyntacseForDeserializing.DeserializationSyntacseWithParse;
-import SyntacseForDeserializing.DeserializationSyntacseWithoutParse;
 import SyntacseForDeserializing.DeserializingSyntacse;
-import java.io.BufferedReader;
-import java.io.File;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import java.io.IOException;
 import org.xml.sax.SAXException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-//TODO: Comments and deserialization without parse
 public class JavaDeserializer {
-    
-    public JavaDeserializer(){ }
 
-    public Object Make(FileInputStream stream, DeserializingSyntacse deserializingSyntacse)
-        throws IOException, SAXException, ParserConfigurationException, IllegalAccessException, InstantiationException, ClassNotFoundException {
-        if (deserializingSyntacse instanceof DeserializationSyntacseWithParse)
-            return ((DeserializationSyntacseWithParse) deserializingSyntacse).Parse(stream);
-        return null;
-
+    public JavaDeserializer() {
     }
+
+    /**
+     * Main method that starts deserializing
+     *
+     * @param path path to read file
+     * @param deserializingSyntacse type of deserialization
+     * @return deserialized Object
+     * @throws IOException if tou get this Exception, you have problem with your file
+     * @throws SAXException if tou get this Exception, you have problem with XML serialization
+     */
+    public Object Make(String path, DeserializingSyntacse deserializingSyntacse)
+        throws IOException {
+        if (deserializingSyntacse instanceof DeserializationSyntacseWithParse) {
+            return ((DeserializationSyntacseWithParse) deserializingSyntacse).Parse(path);
+        }
+        return null;
+    }
+
 }

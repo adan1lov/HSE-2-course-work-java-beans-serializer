@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_192" class="java.beans.XMLDecoder">
+ <object class="forGraphics.Classes.ClassWith4Fields">
+  <void property="classWith3Fields">
+   <object class="forGraphics.Classes.ClassWith3Fields">
+    <void property="classWith2Fields">
+     <object class="forGraphics.Classes.ClassWith2Fields">
+      <void property="classWith1Fields">
+       <object class="forGraphics.Classes.ClassWith1Fields">
+        <void property="classWith0Fields">
+         <object class="forGraphics.Classes.ClassWith0Fields">
+          <void property="f1">
+           <long>1</long>
+          </void>
+          <void property="f2">
+           <long>2</long>
+          </void>
+          <void property="f3">
+           <long>3</long>
+          </void>
+          <void property="f4">
+           <long>4</long>
+          </void>
+          <void property="f5">
+           <long>5</long>
+          </void>
+          <void property="f6">
+           <long>6</long>
+          </void>
+          <void property="f7">
+           <long>7</long>
+          </void>
+         </object>
+        </void>
+        <void property="f1">
+         <long>1</long>
+        </void>
+        <void property="f10">
+         <long>10</long>
+        </void>
+        <void property="f11">
+         <long>11</long>
+        </void>
+        <void property="f12">
+         <long>12</long>
+        </void>
+        <void property="f13">
+         <long>13</long>
+        </void>
+        <void property="f14">
+         <long>14</long>
+        </void>
+        <void property="f15">
+         <long>15</long>
+        </void>
+        <void property="f2">
+         <long>2</long>
+        </void>
+        <void property="f3">
+         <long>3</long>
+        </void>
+        <void property="f4">
+         <long>4</long>
+        </void>
+        <void property="f5">
+         <long>5</long>
+        </void>
+        <void property="f6">
+         <long>6</long>
+        </void>
+        <void property="f7">
+         <long>7</long>
+        </void>
+        <void property="f8">
+         <long>8</long>
+        </void>
+        <void property="f9">
+         <long>9</long>
+        </void>
+       </object>
+      </void>
+      <void property="f1">
+       <long>1</long>
+      </void>
+      <void property="f10">
+       <long>10</long>
+      </void>
+      <void property="f11">
+       <long>11</long>
+      </void>
+      <void property="f12">
+       <long>12</long>
+      </void>
+      <void property="f13">
+       <long>13</long>
+      </void>
+      <void property="f14">
+       <long>14</long>
+      </void>
+      <void property="f15">
+       <long>15</long>
+      </void>
+      <void property="f16">
+       <long>16</long>
+      </void>
+      <void property="f17">
+       <long>17</long>
+      </void>
+      <void property="f18">
+       <long>18</long>
+      </void>
+      <void property="f19">
+       <long>19</long>
+      </void>
+      <void property="f2">
+       <long>2</long>
+      </void>
+      <void property="f20">
+       <long>20</long>
+      </void>
+      <void property="f21">
+       <long>21</long>
+      </void>
+      <void property="f22">
+       <long>22</long>
+      </void>
+      <void property="f23">
+       <long>23</long>
+      </void>
+      <void property="f24">
+       <long>24</long>
+      </void>
+      <void property="f25">
+       <long>25</long>
+      </void>
+      <void property="f26">
+       <long>26</long>
+      </void>
+      <void property="f27">
+       <long>27</long>
+      </void>
+      <void property="f28">
+       <long>28</long>
+      </void>
+      <void property="f29">
+       <long>29</long>
+      </void>
+      <void property="f3">
+       <long>3</long>
+      </void>
+      <void property="f30">
+       <long>30</long>
+      </void>
+      <void property="f31">
+       <long>31</long>
+      </void>
+      <void property="f4">
+       <long>4</long>
+      </void>
+      <void property="f5">
+       <long>5</long>
+      </void>
+      <void property="f6">
+       <long>6</long>
+      </void>
+      <void property="f7">
+       <long>7</long>
+      </void>
+      <void property="f8">
+       <long>8</long>
+      </void>
+      <void property="f9">
+       <long>9</long>
+      </void>
+     </object>
+    </void>
+    <void property="f1">
+     <long>1</long>
+    </void>
+    <void property="f10">
+     <long>10</long>
+    </void>
+    <void property="f11">
+     <long>11</long>
+    </void>
+    <void property="f12">
+     <long>12</long>
+    </void>
+    <void property="f13">
+     <long>13</long>
+    </void>
+    <void property="f14">
+     <long>14</long>
+    </void>
+    <void property="f15">
+     <long>15</long>
+    </void>
+    <void property="f16">
+     <long>16</long>
+    </void>
+    <void property="f17">
+     <long>17</long>
+    </void>
+    <void property="f18">
+     <long>18</long>
+    </void>
+    <void property="f19">
+     <long>19</long>
+    </void>
+    <void property="f2">
+     <long>2</long>
+    </void>
+    <void property="f20">
+     <long>20</long>
+    </void>
+    <void property="f21">
+     <long>21</long>
+    </void>
+    <void property="f22">
+     <long>22</long>
+    </void>
+    <void property="f23">
+     <long>23</long>
+    </void>
+    <void property="f24">
+     <long>24</long>
+    </void>
+    <void property="f25">
+     <long>25</long>
+    </void>
+    <void property="f26">
+     <long>26</long>
+    </void>
+    <void property="f27">
+     <long>27</long>
+    </void>
+    <void property="f28">
+     <long>28</long>
+    </void>
+    <void property="f29">
+     <long>29</long>
+    </void>
+    <void property="f3">
+     <long>3</long>
+    </void>
+    <void property="f30">
+     <long>30</long>
+    </void>
+    <void property="f31">
+     <long>31</long>
+    </void>
+    <void property="f32">
+     <long>32</long>
+    </void>
+    <void property="f33">
+     <long>33</long>
+    </void>
+    <void property="f34">
+     <long>34</long>
+    </void>
+    <void property="f35">
+     <long>35</long>
+    </void>
+    <void property="f36">
+     <long>36</long>
+    </void>
+    <void property="f37">
+     <long>37</long>
+    </void>
+    <void property="f38">
+     <long>38</long>
+    </void>
+    <void property="f39">
+     <long>39</long>
+    </void>
+    <void property="f4">
+     <long>4</long>
+    </void>
+    <void property="f40">
+     <long>40</long>
+    </void>
+    <void property="f41">
+     <long>41</long>
+    </void>
+    <void property="f42">
+     <long>42</long>
+    </void>
+    <void property="f43">
+     <long>43</long>
+    </void>
+    <void property="f44">
+     <long>44</long>
+    </void>
+    <void property="f45">
+     <long>45</long>
+    </void>
+    <void property="f46">
+     <long>46</long>
+    </void>
+    <void property="f47">
+     <long>47</long>
+    </void>
+    <void property="f48">
+     <long>48</long>
+    </void>
+    <void property="f49">
+     <long>49</long>
+    </void>
+    <void property="f5">
+     <long>5</long>
+    </void>
+    <void property="f50">
+     <long>50</long>
+    </void>
+    <void property="f51">
+     <long>51</long>
+    </void>
+    <void property="f52">
+     <long>52</long>
+    </void>
+    <void property="f53">
+     <long>53</long>
+    </void>
+    <void property="f54">
+     <long>54</long>
+    </void>
+    <void property="f55">
+     <long>55</long>
+    </void>
+    <void property="f56">
+     <long>56</long>
+    </void>
+    <void property="f57">
+     <long>57</long>
+    </void>
+    <void property="f58">
+     <long>58</long>
+    </void>
+    <void property="f59">
+     <long>59</long>
+    </void>
+    <void property="f6">
+     <long>6</long>
+    </void>
+    <void property="f60">
+     <long>60</long>
+    </void>
+    <void property="f61">
+     <long>61</long>
+    </void>
+    <void property="f62">
+     <long>62</long>
+    </void>
+    <void property="f63">
+     <long>63</long>
+    </void>
+    <void property="f7">
+     <long>7</long>
+    </void>
+    <void property="f8">
+     <long>8</long>
+    </void>
+    <void property="f9">
+     <long>9</long>
+    </void>
+   </object>
+  </void>
+  <void property="f1">
+   <long>1</long>
+  </void>
+  <void property="f10">
+   <long>10</long>
+  </void>
+  <void property="f100">
+   <long>100</long>
+  </void>
+  <void property="f101">
+   <long>101</long>
+  </void>
+  <void property="f102">
+   <long>102</long>
+  </void>
+  <void property="f103">
+   <long>103</long>
+  </void>
+  <void property="f104">
+   <long>104</long>
+  </void>
+  <void property="f105">
+   <long>105</long>
+  </void>
+  <void property="f106">
+   <long>106</long>
+  </void>
+  <void property="f107">
+   <long>107</long>
+  </void>
+  <void property="f108">
+   <long>108</long>
+  </void>
+  <void property="f109">
+   <long>109</long>
+  </void>
+  <void property="f11">
+   <long>11</long>
+  </void>
+  <void property="f110">
+   <long>110</long>
+  </void>
+  <void property="f111">
+   <long>111</long>
+  </void>
+  <void property="f112">
+   <long>112</long>
+  </void>
+  <void property="f113">
+   <long>113</long>
+  </void>
+  <void property="f114">
+   <long>114</long>
+  </void>
+  <void property="f115">
+   <long>115</long>
+  </void>
+  <void property="f116">
+   <long>116</long>
+  </void>
+  <void property="f117">
+   <long>117</long>
+  </void>
+  <void property="f118">
+   <long>118</long>
+  </void>
+  <void property="f119">
+   <long>119</long>
+  </void>
+  <void property="f12">
+   <long>12</long>
+  </void>
+  <void property="f120">
+   <long>120</long>
+  </void>
+  <void property="f121">
+   <long>121</long>
+  </void>
+  <void property="f122">
+   <long>122</long>
+  </void>
+  <void property="f123">
+   <long>123</long>
+  </void>
+  <void property="f124">
+   <long>124</long>
+  </void>
+  <void property="f125">
+   <long>125</long>
+  </void>
+  <void property="f126">
+   <long>126</long>
+  </void>
+  <void property="f127">
+   <long>127</long>
+  </void>
+  <void property="f13">
+   <long>13</long>
+  </void>
+  <void property="f14">
+   <long>14</long>
+  </void>
+  <void property="f15">
+   <long>15</long>
+  </void>
+  <void property="f16">
+   <long>16</long>
+  </void>
+  <void property="f17">
+   <long>17</long>
+  </void>
+  <void property="f18">
+   <long>18</long>
+  </void>
+  <void property="f19">
+   <long>19</long>
+  </void>
+  <void property="f2">
+   <long>2</long>
+  </void>
+  <void property="f20">
+   <long>20</long>
+  </void>
+  <void property="f21">
+   <long>21</long>
+  </void>
+  <void property="f22">
+   <long>22</long>
+  </void>
+  <void property="f23">
+   <long>23</long>
+  </void>
+  <void property="f24">
+   <long>24</long>
+  </void>
+  <void property="f25">
+   <long>25</long>
+  </void>
+  <void property="f26">
+   <long>26</long>
+  </void>
+  <void property="f27">
+   <long>27</long>
+  </void>
+  <void property="f28">
+   <long>28</long>
+  </void>
+  <void property="f29">
+   <long>29</long>
+  </void>
+  <void property="f3">
+   <long>3</long>
+  </void>
+  <void property="f30">
+   <long>30</long>
+  </void>
+  <void property="f31">
+   <long>31</long>
+  </void>
+  <void property="f32">
+   <long>32</long>
+  </void>
+  <void property="f33">
+   <long>33</long>
+  </void>
+  <void property="f34">
+   <long>34</long>
+  </void>
+  <void property="f35">
+   <long>35</long>
+  </void>
+  <void property="f36">
+   <long>36</long>
+  </void>
+  <void property="f37">
+   <long>37</long>
+  </void>
+  <void property="f38">
+   <long>38</long>
+  </void>
+  <void property="f39">
+   <long>39</long>
+  </void>
+  <void property="f4">
+   <long>4</long>
+  </void>
+  <void property="f40">
+   <long>40</long>
+  </void>
+  <void property="f41">
+   <long>41</long>
+  </void>
+  <void property="f42">
+   <long>42</long>
+  </void>
+  <void property="f43">
+   <long>43</long>
+  </void>
+  <void property="f44">
+   <long>44</long>
+  </void>
+  <void property="f45">
+   <long>45</long>
+  </void>
+  <void property="f46">
+   <long>46</long>
+  </void>
+  <void property="f47">
+   <long>47</long>
+  </void>
+  <void property="f48">
+   <long>48</long>
+  </void>
+  <void property="f49">
+   <long>49</long>
+  </void>
+  <void property="f5">
+   <long>5</long>
+  </void>
+  <void property="f50">
+   <long>50</long>
+  </void>
+  <void property="f51">
+   <long>51</long>
+  </void>
+  <void property="f52">
+   <long>52</long>
+  </void>
+  <void property="f53">
+   <long>53</long>
+  </void>
+  <void property="f54">
+   <long>54</long>
+  </void>
+  <void property="f55">
+   <long>55</long>
+  </void>
+  <void property="f56">
+   <long>56</long>
+  </void>
+  <void property="f57">
+   <long>57</long>
+  </void>
+  <void property="f58">
+   <long>58</long>
+  </void>
+  <void property="f59">
+   <long>59</long>
+  </void>
+  <void property="f6">
+   <long>6</long>
+  </void>
+  <void property="f60">
+   <long>60</long>
+  </void>
+  <void property="f61">
+   <long>61</long>
+  </void>
+  <void property="f62">
+   <long>62</long>
+  </void>
+  <void property="f63">
+   <long>63</long>
+  </void>
+  <void property="f64">
+   <long>64</long>
+  </void>
+  <void property="f65">
+   <long>65</long>
+  </void>
+  <void property="f66">
+   <long>66</long>
+  </void>
+  <void property="f67">
+   <long>67</long>
+  </void>
+  <void property="f68">
+   <long>68</long>
+  </void>
+  <void property="f69">
+   <long>69</long>
+  </void>
+  <void property="f7">
+   <long>7</long>
+  </void>
+  <void property="f70">
+   <long>70</long>
+  </void>
+  <void property="f71">
+   <long>71</long>
+  </void>
+  <void property="f72">
+   <long>72</long>
+  </void>
+  <void property="f73">
+   <long>73</long>
+  </void>
+  <void property="f74">
+   <long>74</long>
+  </void>
+  <void property="f75">
+   <long>75</long>
+  </void>
+  <void property="f76">
+   <long>76</long>
+  </void>
+  <void property="f77">
+   <long>77</long>
+  </void>
+  <void property="f78">
+   <long>78</long>
+  </void>
+  <void property="f79">
+   <long>79</long>
+  </void>
+  <void property="f8">
+   <long>8</long>
+  </void>
+  <void property="f80">
+   <long>80</long>
+  </void>
+  <void property="f81">
+   <long>81</long>
+  </void>
+  <void property="f82">
+   <long>82</long>
+  </void>
+  <void property="f83">
+   <long>83</long>
+  </void>
+  <void property="f84">
+   <long>84</long>
+  </void>
+  <void property="f85">
+   <long>85</long>
+  </void>
+  <void property="f86">
+   <long>86</long>
+  </void>
+  <void property="f87">
+   <long>87</long>
+  </void>
+  <void property="f88">
+   <long>88</long>
+  </void>
+  <void property="f89">
+   <long>89</long>
+  </void>
+  <void property="f9">
+   <long>9</long>
+  </void>
+  <void property="f90">
+   <long>90</long>
+  </void>
+  <void property="f91">
+   <long>91</long>
+  </void>
+  <void property="f92">
+   <long>92</long>
+  </void>
+  <void property="f93">
+   <long>93</long>
+  </void>
+  <void property="f94">
+   <long>94</long>
+  </void>
+  <void property="f95">
+   <long>95</long>
+  </void>
+  <void property="f96">
+   <long>96</long>
+  </void>
+  <void property="f97">
+   <long>97</long>
+  </void>
+  <void property="f98">
+   <long>98</long>
+  </void>
+  <void property="f99">
+   <long>99</long>
+  </void>
+ </object>
+</java>

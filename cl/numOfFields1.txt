@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_191">
+<object class="forGraphics.Classes.ClassWith1Fields" id="ClassWith1Fields0">
+	<void property="classWith0Fields">
+	<object class="forGraphics.Classes.ClassWith0Fields" id="ClassWith0Fields1">
+		<void property="f0">
+			<long>0</long>
+		</void>
+		<void property="f1">
+			<long>1</long>
+		</void>
+		<void property="f2">
+			<long>2</long>
+		</void>
+		<void property="f3">
+			<long>3</long>
+		</void>
+		<void property="f4">
+			<long>4</long>
+		</void>
+		<void property="f5">
+			<long>5</long>
+		</void>
+		<void property="f6">
+			<long>6</long>
+		</void>
+		<void property="f7">
+			<long>7</long>
+		</void>
+	</object>
+	</void>
+	<void property="f0">
+		<long>0</long>
+	</void>
+	<void property="f1">
+		<long>1</long>
+	</void>
+	<void property="f10">
+		<long>10</long>
+	</void>
+	<void property="f11">
+		<long>11</long>
+	</void>
+	<void property="f12">
+		<long>12</long>
+	</void>
+	<void property="f13">
+		<long>13</long>
+	</void>
+	<void property="f14">
+		<long>14</long>
+	</void>
+	<void property="f15">
+		<long>15</long>
+	</void>
+	<void property="f2">
+		<long>2</long>
+	</void>
+	<void property="f3">
+		<long>3</long>
+	</void>
+	<void property="f4">
+		<long>4</long>
+	</void>
+	<void property="f5">
+		<long>5</long>
+	</void>
+	<void property="f6">
+		<long>6</long>
+	</void>
+	<void property="f7">
+		<long>7</long>
+	</void>
+	<void property="f8">
+		<long>8</long>
+	</void>
+	<void property="f9">
+		<long>9</long>
+	</void>
+</object>
+</java>

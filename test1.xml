@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_191">
+<object class="test1.PrimitiveExample" id="PrimitiveExample0">
+	<void property="aBoolean">
+		<boolean>true</boolean>
+	</void>
+	<void property="aByte">
+		<byte>1</byte>
+	</void>
+	<void property="aChar">
+		<char>2</char>
+	</void>
+	<void property="aDouble">
+		<double>3.0</double>
+	</void>
+	<void property="aFloat">
+		<float>4.0</float>
+	</void>
+	<void property="aLong">
+		<long>5</long>
+	</void>
+	<void property="aShort">
+		<short>7</short>
+	</void>
+	<void property="aString">
+		<string>8</string>
+	</void>
+	<void property="anInt">
+		<int>6</int>
+	</void>
+</object>
+</java>

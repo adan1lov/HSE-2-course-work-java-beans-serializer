@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_191">
+<object class="test4.ArraysInArrays" id="ArraysInArrays0">
+	<void property="aBoolean">
+	<array class="[Z" id="boolean[][]2" length="1">
+		<void index="0">
+		<array class="boolean" id="boolean[]3" length="2">
+			<void index="0">
+				<boolean>true</boolean>
+			</void>
+			<void index="1">
+				<boolean>false</boolean>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aByte">
+	<array class="[B" id="byte[][]4" length="1">
+		<void index="0">
+		<array class="byte" id="byte[]5" length="2">
+			<void index="0">
+				<byte>0</byte>
+			</void>
+			<void index="1">
+				<byte>1</byte>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aChar">
+	<array class="[C" id="char[][]6" length="1">
+		<void index="0">
+		<array class="char" id="char[]7" length="2">
+			<void index="0">
+				<char>a</char>
+			</void>
+			<void index="1">
+				<char>b</char>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aDouble">
+	<array class="[D" id="double[][]8" length="1">
+		<void index="0">
+		<array class="double" id="double[]9" length="2">
+			<void index="0">
+				<double>3.2</double>
+			</void>
+			<void index="1">
+				<double>3.3</double>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aFloat">
+	<array class="[F" id="float[][]10" length="1">
+		<void index="0">
+		<array class="float" id="float[]11" length="2">
+			<void index="0">
+				<float>3.2</float>
+			</void>
+			<void index="1">
+				<float>3.3</float>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aLong">
+	<array class="[J" id="long[][]12" length="1">
+		<void index="0">
+		<array class="long" id="long[]13" length="2">
+			<void index="0">
+				<long>5</long>
+			</void>
+			<void index="1">
+				<long>5</long>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aShort">
+	<array class="[S" id="short[][]14" length="1">
+		<void index="0">
+		<array class="short" id="short[]15" length="2">
+			<void index="0">
+				<short>7</short>
+			</void>
+			<void index="1">
+				<short>7</short>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="aString">
+	<array class="[Ljava.lang.String;" id="String[][]16" length="1">
+		<void index="0">
+		<array class="java.lang.String" id="String[]17" length="2">
+			<void index="0">
+				<string>hello</string>
+			</void>
+			<void index="1">
+				<string>world</string>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+	<void property="anInt">
+	<array class="[I" id="int[][]18" length="1">
+		<void index="0">
+		<array class="int" id="int[]19" length="2">
+			<void index="0">
+				<int>6</int>
+			</void>
+			<void index="1">
+				<int>6</int>
+			</void>
+		</array>
+		</void>
+	</array>
+	</void>
+</object>
+</java>

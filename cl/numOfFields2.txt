@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_191">
+<object class="forGraphics.Classes.ClassWith2Fields" id="ClassWith2Fields0">
+	<void property="classWith1Fields">
+	<object class="forGraphics.Classes.ClassWith1Fields" id="ClassWith1Fields1">
+		<void property="classWith0Fields">
+		<object class="forGraphics.Classes.ClassWith0Fields" id="ClassWith0Fields2">
+			<void property="f0">
+				<long>0</long>
+			</void>
+			<void property="f1">
+				<long>1</long>
+			</void>
+			<void property="f2">
+				<long>2</long>
+			</void>
+			<void property="f3">
+				<long>3</long>
+			</void>
+			<void property="f4">
+				<long>4</long>
+			</void>
+			<void property="f5">
+				<long>5</long>
+			</void>
+			<void property="f6">
+				<long>6</long>
+			</void>
+			<void property="f7">
+				<long>7</long>
+			</void>
+		</object>
+		</void>
+		<void property="f0">
+			<long>0</long>
+		</void>
+		<void property="f1">
+			<long>1</long>
+		</void>
+		<void property="f10">
+			<long>10</long>
+		</void>
+		<void property="f11">
+			<long>11</long>
+		</void>
+		<void property="f12">
+			<long>12</long>
+		</void>
+		<void property="f13">
+			<long>13</long>
+		</void>
+		<void property="f14">
+			<long>14</long>
+		</void>
+		<void property="f15">
+			<long>15</long>
+		</void>
+		<void property="f2">
+			<long>2</long>
+		</void>
+		<void property="f3">
+			<long>3</long>
+		</void>
+		<void property="f4">
+			<long>4</long>
+		</void>
+		<void property="f5">
+			<long>5</long>
+		</void>
+		<void property="f6">
+			<long>6</long>
+		</void>
+		<void property="f7">
+			<long>7</long>
+		</void>
+		<void property="f8">
+			<long>8</long>
+		</void>
+		<void property="f9">
+			<long>9</long>
+		</void>
+	</object>
+	</void>
+	<void property="f0">
+		<long>0</long>
+	</void>
+	<void property="f1">
+		<long>1</long>
+	</void>
+	<void property="f10">
+		<long>10</long>
+	</void>
+	<void property="f11">
+		<long>11</long>
+	</void>
+	<void property="f12">
+		<long>12</long>
+	</void>
+	<void property="f13">
+		<long>13</long>
+	</void>
+	<void property="f14">
+		<long>14</long>
+	</void>
+	<void property="f15">
+		<long>15</long>
+	</void>
+	<void property="f16">
+		<long>16</long>
+	</void>
+	<void property="f17">
+		<long>17</long>
+	</void>
+	<void property="f18">
+		<long>18</long>
+	</void>
+	<void property="f19">
+		<long>19</long>
+	</void>
+	<void property="f2">
+		<long>2</long>
+	</void>
+	<void property="f20">
+		<long>20</long>
+	</void>
+	<void property="f21">
+		<long>21</long>
+	</void>
+	<void property="f22">
+		<long>22</long>
+	</void>
+	<void property="f23">
+		<long>23</long>
+	</void>
+	<void property="f24">
+		<long>24</long>
+	</void>
+	<void property="f25">
+		<long>25</long>
+	</void>
+	<void property="f26">
+		<long>26</long>
+	</void>
+	<void property="f27">
+		<long>27</long>
+	</void>
+	<void property="f28">
+		<long>28</long>
+	</void>
+	<void property="f29">
+		<long>29</long>
+	</void>
+	<void property="f3">
+		<long>3</long>
+	</void>
+	<void property="f30">
+		<long>30</long>
+	</void>
+	<void property="f31">
+		<long>31</long>
+	</void>
+	<void property="f4">
+		<long>4</long>
+	</void>
+	<void property="f5">
+		<long>5</long>
+	</void>
+	<void property="f6">
+		<long>6</long>
+	</void>
+	<void property="f7">
+		<long>7</long>
+	</void>
+	<void property="f8">
+		<long>8</long>
+	</void>
+	<void property="f9">
+		<long>9</long>
+	</void>
+</object>
+</java>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_192" class="java.beans.XMLDecoder">
+ <object class="forGraphics.Classes.ClassWith0Fields">
+  <void property="f1">
+   <long>1</long>
+  </void>
+  <void property="f2">
+   <long>2</long>
+  </void>
+  <void property="f3">
+   <long>3</long>
+  </void>
+  <void property="f4">
+   <long>4</long>
+  </void>
+  <void property="f5">
+   <long>5</long>
+  </void>
+  <void property="f6">
+   <long>6</long>
+  </void>
+  <void property="f7">
+   <long>7</long>
+  </void>
+ </object>
+</java>
