@@ -55,8 +55,8 @@ public class JavaSerializer {
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
     
         //s-syntacse that we would use
-        if (s == null)
-            throw new NullPointerException("SyntacseForSerializing was null");
+        if (s == null || writer==null)
+            throw new NullPointerException("SyntacseForSerializing or FileOutputStream was null");
         _serializingSyntacse = s;
     
     
@@ -151,21 +151,21 @@ public class JavaSerializer {
             
         } else {
             if (objectType == Byte.class) {
-                primitiveToString(output, "",  o, tabs + 1, index);
+                primitiveToString(output, name,  o, tabs + 1, index);
             } else if (objectType == Short.class) {
-                primitiveToString(output, "",  o, tabs + 1, index);
+                primitiveToString(output, name,  o, tabs + 1, index);
             } else if (objectType == Integer.class) {
-                primitiveToString(output, "", o, tabs + 1, index);
+                primitiveToString(output, name, o, tabs + 1, index);
             } else if (objectType == Long.class) {
-                primitiveToString(output, "", o, tabs + 1, index);
+                primitiveToString(output, name, o, tabs + 1, index);
             } else if (objectType == Character.class) {
-                primitiveToString(output, "",  o, tabs + 1, index);
+                primitiveToString(output, name,  o, tabs + 1, index);
             } else if (objectType == Float.class) {
-                primitiveToString(output, "", o, tabs + 1, index);
+                primitiveToString(output, name, o, tabs + 1, index);
             } else if (objectType == Double.class) {
-                primitiveToString(output, "", o, tabs + 1, index);
+                primitiveToString(output, name, o, tabs + 1, index);
             } else if (objectType == Boolean.class) {
-                primitiveToString(output, "", o, tabs + 1, index);
+                primitiveToString(output, name, o, tabs + 1, index);
             } else {
 
                 objectList.add(o);
@@ -180,11 +180,9 @@ public class JavaSerializer {
 
                 for (PropertyDescriptor pd : propertyDescriptors) {
                     if (pd.getReadMethod() != null) {
-
                         if (pd.getPropertyType().isPrimitive() || pd.getPropertyType().isAssignableFrom(String.class))
                             primitiveToString(
-                                output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1
-                            );
+                                output, pd.getName(), pd.getReadMethod().invoke(o), tabs + 1, -1);
                         else if (pd.getReadMethod().invoke(o) != null)
                             nonPrimitiveToString(output, pd.getName(), pd.getReadMethod().invoke(o),
                                 tabs + 1, -1);

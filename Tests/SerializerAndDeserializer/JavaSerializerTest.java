@@ -3,6 +3,7 @@ package SerializerAndDeserializer;
 
 import Syntacse.XML.XmlDeserializing;
 import Syntacse.XML.XmlSerializingSyntacse;
+import SyntacseForDeserializing.DeserializingSyntacse;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
 import java.io.FileInputStream;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import Wrappers.Wrappers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 import test1.PrimitiveExample;
 import test2.Company;
 import test2.Person;
@@ -172,7 +174,9 @@ class JavaSerializerTest {
         wrappers.setaByte((byte)1);
         wrappers.setaDouble(0.1);
         wrappers.setaFloat(0.1f);
-        wrappers.setaLong();
+        wrappers.setaLong(1l);
+        wrappers.setaShort((short)20);
+        wrappers.setCharacter('a');
         JavaSerializer javaSerializer= new JavaSerializer(wrappers);
         FileOutputStream fileOutputStream= new FileOutputStream("wrapper.xml");
         javaSerializer.Make(fileOutputStream,new XmlSerializingSyntacse());
@@ -181,5 +185,12 @@ class JavaSerializerTest {
         Wrappers wr= (Wrappers)javaDeserializer.Make("wrapper.xml", new XmlDeserializing());
         
     }
-
+    @Test
+    void exception() throws IOException {
+        JavaSerializer javaSerializer= new JavaSerializer(new Object());
+        Assertions.assertThrows(NullPointerException.class, () -> new JavaSerializer(null));
+        Assertions.assertThrows(NullPointerException.class, () -> javaSerializer.Make(null, null));
+        class ds implements DeserializingSyntacse {}
+        Assertions.assertNull(new JavaDeserializer().Make("s", new ds()));
+    }
 }
