@@ -97,8 +97,6 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
                     try {
                         beanInfo = Introspector
                             .getBeanInfo(dfs.peek().getClass(), Object.class);
-                        ArrayList<Integer> list = new ArrayList<>();
-
                         beanInfoMap.put(dfs.peek().getClass(), beanInfo);
                     } catch (IntrospectionException e) {
                         e.printStackTrace();

@@ -2,31 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a507e2f-1d6d-4c14-9a2c-a95ba9206f6c" name="Default Changelist" comment="further progress">
-      <change afterPath="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Wrappers/Wrappers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith0Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith0Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith1Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith1Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith2Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith2Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith3Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith3Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith4Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith4Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith5Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith5Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith6Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith6Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith7Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith7Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith8Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith8Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cl/num9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cl/num9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$Indexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$Indexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$MethodInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$MethodInvoker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$PropertyInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing$PropertyInvoker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HSE-2-course-work-java-beans-serializer/Syntacse/XML/XmlDeserializing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/HSE-2-course-work-java-beans-serializer/SerializerAndDeserializer/JavaSerializerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/HSE-2-course-work-java-beans-serializer/SerializerAndDeserializer/JavaSerializerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/HSE-2-course-work-java-beans-serializer/forGraphics/TestingForGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/HSE-2-course-work-java-beans-serializer/forGraphics/TestingForGraph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Syntacse/XML/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Syntacse/XML/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Syntacse/XML/XMLDeserializerDOM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializingSAX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithParse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithoutParse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SyntacseForSerializing/SerializingSyntacse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SyntacseForSerializing/SerializingSyntacse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLParser/MyParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Программа и методика испытаний.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Программа и методика испытаний.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Техническое задание.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Техническое задание.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,6 +34,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="277" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -43,66 +46,24 @@
     <fileColor scope="All" color="Green" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields3.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields4.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields5.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields6.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields7.txt">
+        <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7344" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith6Fields.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="4613" column="32" selection-start-line="4613" selection-start-column="32" selection-end-line="4613" selection-end-column="32" />
+            <state relative-caret-position="338">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding>
-                <element signature="e#79773#79774#0" expanded="true" />
-                <element signature="e#79812#79813#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="36872" column="57" selection-start-line="36872" selection-start-column="57" selection-end-line="36872" selection-end-column="57" />
-              <folding>
-                <element signature="e#664133#664134#0" expanded="true" />
-                <element signature="e#664172#664173#0" expanded="true" />
-                <element signature="e#664272#664273#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java">
+        <entry file="file://$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="129" column="34" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
+            <state relative-caret-position="216">
+              <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,15 +72,100 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields8.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Tests/test1/PrimitiveExample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cl/numOfFields9.txt">
+        <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="60">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/Wrappers/Wrappers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1020#1021#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1119#1120#0" expanded="true" />
+                <element signature="e#1166#1167#0" expanded="true" />
+                <element signature="e#1202#1203#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1424#1425#0" expanded="true" />
+                <element signature="e#1460#1461#0" expanded="true" />
+                <element signature="e#1489#1490#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/XMLDecoder.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-78">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -136,6 +182,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getBe</find>
+      <find>ref</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,7 +209,6 @@
         <option value="$PROJECT_DIR$/cl/numOfFields9.txt" />
         <option value="$PROJECT_DIR$/src/XMLParser/MyParser.java" />
         <option value="$PROJECT_DIR$/src/Syntacse/XML/some.java" />
-        <option value="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java" />
         <option value="$PROJECT_DIR$/src/XMLParser/Element.java" />
         <option value="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithoutParse.java" />
         <option value="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializingSyntacse.java" />
@@ -171,11 +217,8 @@
         <option value="$PROJECT_DIR$/test2.xml" />
         <option value="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializingSAX.java" />
         <option value="$PROJECT_DIR$/src/Syntacse/XML/Element.java" />
-        <option value="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java" />
         <option value="$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java" />
-        <option value="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java" />
         <option value="$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithParse.java" />
-        <option value="$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith4Fields.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith0Fields.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith1Fields.java" />
@@ -186,14 +229,20 @@
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith8Fields.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith6Fields.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java" />
+        <option value="$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java" />
+        <option value="$PROJECT_DIR$/Tests/test1/PrimitiveExample.java" />
+        <option value="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java" />
         <option value="$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java" />
+        <option value="$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java" />
+        <option value="$PROJECT_DIR$/Tests/Wrappers/Wrappers.java" />
+        <option value="$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1273" />
-    <option name="width" value="1294" />
-    <option name="height" value="1417" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -229,45 +278,7 @@
             <path>
               <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
               <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Syntacse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Syntacse" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SyntacseForDeserializing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SyntacseForSerializing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="forGraphics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="forGraphics" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
@@ -275,12 +286,18 @@
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
               <item name="SerializerAndDeserializer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HSE-2-course-work-java-beans-serializer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HSE-2-course-work-java-beans-serializer" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,6 +311,9 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556045213084" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
   </component>
   <component name="RecentsManager">
@@ -313,7 +333,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestingForGraph.fieldTest">
+  <component name="RunManager" selected="JUnit.JavaSerializerTest.wrappers">
     <configuration name="JavaSerializerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HSE-2-course-work-java-beans-serializer" />
       <extension name="coverage">
@@ -345,7 +365,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaSerializerTest.simpleExample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JavaSerializerTest.v" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HSE-2-course-work-java-beans-serializer" />
       <extension name="coverage">
         <pattern>
@@ -355,13 +375,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="SerializerAndDeserializer" />
       <option name="MAIN_CLASS_NAME" value="SerializerAndDeserializer.JavaSerializerTest" />
-      <option name="METHOD_NAME" value="simpleExample" />
+      <option name="METHOD_NAME" value="v" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaSerializerTest.t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JavaSerializerTest.wrappers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HSE-2-course-work-java-beans-serializer" />
       <extension name="coverage">
         <pattern>
@@ -371,7 +391,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="SerializerAndDeserializer" />
       <option name="MAIN_CLASS_NAME" value="SerializerAndDeserializer.JavaSerializerTest" />
-      <option name="METHOD_NAME" value="t" />
+      <option name="METHOD_NAME" value="wrappers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -395,11 +415,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestingForGraph.fieldTest" />
+        <item itemvalue="JUnit.JavaSerializerTest.wrappers" />
         <item itemvalue="JUnit.JavaSerializerTest" />
-        <item itemvalue="JUnit.JavaSerializerTest.simpleExample" />
+        <item itemvalue="JUnit.TestingForGraph.fieldTest" />
         <item itemvalue="JUnit.JavaSerializerTest.primitiveTests" />
-        <item itemvalue="JUnit.JavaSerializerTest.t" />
+        <item itemvalue="JUnit.JavaSerializerTest.v" />
       </list>
     </recent_temporary>
   </component>
@@ -434,6 +454,7 @@
       <workItem from="1556048733966" duration="52000" />
       <workItem from="1556048810771" duration="7687000" />
       <workItem from="1557334454645" duration="101053000" />
+      <workItem from="1557742382858" duration="7156000" />
     </task>
     <task id="LOCAL-00001" summary="start to make deserializer">
       <created>1556521528558</created>
@@ -474,39 +495,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JavaSerializerTest - 2019.05.12 at 18h 02m 13s.xml">
+    <history-entry file="JavaSerializerTest_primitiveTests - 2019.05.13 at 15h 53m 43s.xml">
+      <configuration name="JavaSerializerTest.primitiveTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JavaSerializerTest_primitiveTests - 2019.05.13 at 15h 54m 00s.xml">
+      <configuration name="JavaSerializerTest.primitiveTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestingForGraph_fieldTest - 2019.05.13 at 16h 48m 36s.xml">
+      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestingForGraph_fieldTest - 2019.05.13 at 16h 51m 33s.xml">
+      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JavaSerializerTest - 2019.05.13 at 16h 53m 22s.xml">
       <configuration name="JavaSerializerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaSerializerTest - 2019.05.12 at 18h 03m 40s.xml">
+    <history-entry file="JavaSerializerTest - 2019.05.13 at 16h 56m 03s.xml">
       <configuration name="JavaSerializerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 04m 08s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    <history-entry file="JavaSerializerTest - 2019.05.13 at 17h 07m 10s.xml">
+      <configuration name="JavaSerializerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 13m 56s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    <history-entry file="JavaSerializerTest - 2019.05.13 at 17h 07m 16s.xml">
+      <configuration name="JavaSerializerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 19m 01s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    <history-entry file="JavaSerializerTest_wrappers - 2019.05.13 at 17h 07m 58s.xml">
+      <configuration name="JavaSerializerTest.wrappers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 45m 27s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 46m 30s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 47m 22s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 48m 24s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestingForGraph_fieldTest - 2019.05.12 at 18h 49m 33s.xml">
-      <configuration name="TestingForGraph.fieldTest" configurationId="JUnit" />
+    <history-entry file="JavaSerializerTest_wrappers - 2019.05.13 at 17h 09m 16s.xml">
+      <configuration name="JavaSerializerTest.wrappers" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113617000" />
+    <option name="totallyTimeSpent" value="120773000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -518,7 +539,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1426" extended-state="7" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -530,8 +552,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32927758" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32623574" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3255814" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39957717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32927758" />
@@ -539,8 +561,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32927758" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32875264" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,75 +584,33 @@
     <MESSAGE value="further progress" />
     <option name="LAST_COMMIT_MESSAGE" value="further progress" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java</url>
+          <line>183</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HSE_2_course_work_java_beans_serializer$JavaSerializerTest.ic" NAME="JavaSerializerTest Coverage Results" MODIFIED="1557756435545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SerializerAndDeserializer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HSE_2_course_work_java_beans_serializer$JavaSerializerTest_wrappers.ic" NAME="JavaSerializerTest.wrappers Coverage Results" MODIFIED="1557756477934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SerializerAndDeserializer.*</FILTER>
+    </SUITE>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/some.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_192/src.zip!/java/beans/Introspector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-307">
-          <caret line="378" column="12" selection-start-line="378" selection-start-column="12" selection-end-line="378" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/JSON/JsonSerializingSyntacse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#4212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithoutParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_192/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5090">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/MyParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="77" />
-          <folding>
-            <element signature="e#0#2312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializingSyntacse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SyntacseForSerializing/SerializingSyntacse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2834">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test3/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -651,60 +632,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/Element.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="238" column="4" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#PropertyInvoker#0;class#XmlDeserializingSAX#0" />
-            <element signature="class#Indexer#0;class#XmlDeserializingSAX#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="200" column="22" selection-start-line="200" selection-start-column="22" selection-end-line="200" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test1/PrimitiveExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/Element.java" />
     <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith1Fields.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
@@ -789,111 +717,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num4.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num5.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num6.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num7.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num8.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num9.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num0.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/num3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields0.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields3.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields4.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields9.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields5.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields6.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields8.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cl/numOfFields7.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7344" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="36872" column="57" selection-start-line="36872" selection-start-column="57" selection-end-line="36872" selection-end-column="57" />
-          <folding>
-            <element signature="e#664133#664134#0" expanded="true" />
-            <element signature="e#664172#664173#0" expanded="true" />
-            <element signature="e#664272#664273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/num4.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num5.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num6.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num7.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num1.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num2.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/num3.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields1.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields2.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields3.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields4.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields5.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields6.txt" />
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields7.txt" />
     <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith6Fields.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="4613" column="32" selection-start-line="4613" selection-start-column="32" selection-end-line="4613" selection-end-column="32" />
+        <state relative-caret-position="119938">
+          <caret line="4622" column="18" selection-start-line="4622" selection-start-column="18" selection-end-line="4622" selection-end-column="18" />
           <folding>
             <element signature="e#79773#79774#0" expanded="true" />
             <element signature="e#79812#79813#0" expanded="true" />
@@ -901,15 +742,293 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields9.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-273" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/num0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/num8.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/numOfFields8.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/XmlDeserializing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="101" selection-start-line="101" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializingSyntacse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SyntacseForDeserializing/DeserializationSyntacseWithParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/SimpleBeanInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/BeanInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/Introspector.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/PropertyDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SyntacseForSerializing/SerializingSyntacse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/d.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Syntacse/XML/XmlSerializingSyntacse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/forGraphics/Classes/ClassWith9Fields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98624">
+          <caret line="36881" column="18" selection-start-line="36881" selection-start-column="18" selection-end-line="36881" selection-end-column="18" />
+          <folding>
+            <element signature="e#664133#664134#0" expanded="true" />
+            <element signature="e#664172#664173#0" expanded="true" />
+            <element signature="e#664231#664232#0" expanded="true" />
+            <element signature="e#664272#664273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cl/num9.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12012" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/forGraphics/TestingForGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="129" column="34" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
+        <state relative-caret-position="248">
+          <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/beans/XMLDecoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/test1/PrimitiveExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Wrappers/Wrappers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1166#1167#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SerializerAndDeserializer/JavaSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/SerializerAndDeserializer/JavaSerializerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>HSE-2-course-work-java-beans-serializer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

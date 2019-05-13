@@ -54,7 +54,7 @@ public class JavaSerializer {
     public void Make(FileOutputStream writer, SerializingSyntacse s)
         throws IntrospectionException, InvocationTargetException, IllegalAccessException, IOException {
     
-        //syntacse that we would use
+        //s-syntacse that we would use
         if (s == null)
             throw new NullPointerException("SyntacseForSerializing was null");
         _serializingSyntacse = s;

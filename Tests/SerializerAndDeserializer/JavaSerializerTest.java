@@ -6,10 +6,13 @@ import Syntacse.XML.XmlSerializingSyntacse;
 import java.beans.IntrospectionException;
 import java.beans.XMLDecoder;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+
+import Wrappers.Wrappers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import test1.PrimitiveExample;
@@ -160,6 +163,23 @@ class JavaSerializerTest {
         JavaDeserializer javaDeserializer = new JavaDeserializer();
         CyclicGraph pe = (CyclicGraph) javaDeserializer.Make("test5.xml", new XmlDeserializing());
         Assertions.assertSame(pe, pe.getCyclicGraph().getCyclicGraph());
+    }
+    
+    @Test
+    void wrappers() throws IOException, IntrospectionException, IllegalAccessException, InvocationTargetException {
+        Wrappers wrappers= new Wrappers();
+        wrappers.setaBoolean(false);
+        wrappers.setaByte((byte)1);
+        wrappers.setaDouble(0.1);
+        wrappers.setaFloat(0.1f);
+        wrappers.setaLong();
+        JavaSerializer javaSerializer= new JavaSerializer(wrappers);
+        FileOutputStream fileOutputStream= new FileOutputStream("wrapper.xml");
+        javaSerializer.Make(fileOutputStream,new XmlSerializingSyntacse());
+        fileOutputStream.close();
+        JavaDeserializer javaDeserializer= new JavaDeserializer();
+        Wrappers wr= (Wrappers)javaDeserializer.Make("wrapper.xml", new XmlDeserializing());
+        
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_192" class="java.beans.XMLDecoder">
+<java version="1.8.0_191" class="java.beans.XMLDecoder">
  <object class="forGraphics.Classes.ClassWith3Fields">
   <void property="classWith2Fields">
    <object class="forGraphics.Classes.ClassWith2Fields">
