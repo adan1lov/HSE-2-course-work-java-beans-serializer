@@ -1,6 +1,7 @@
 package Syntacse.XML;
 
 import SyntacseForDeserializing.DeserializationSyntacseWithParse;
+
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -10,17 +11,14 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
 
 public class XmlDeserializing implements DeserializationSyntacseWithParse {
-
-
+    
+    
     private Map<String, Object> objectMap = new HashMap<>();
     private String input;
     private long ObjectBegin = 0;
@@ -28,11 +26,11 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
     private Stack<Invoker> dfsVoid = new Stack<>();
     private Map<Class, BeanInfo> beanInfoMap = new HashMap<>();
     private boolean check = false;
-
-
+    
+    
     public XmlDeserializing() {
     }
-
+    
     @Override
     public Object Parse(String path) throws IOException {
         List<String> xml = Files.readAllLines(Paths.get(path));
@@ -57,7 +55,7 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             String str = input.substring((int) start + 1, (int) end);
             String[] params = str.split(" ");
             String qName = params[0];
-
+            
             if (b) {
                 Element elem = new Element();
                 for (int i = 1; i < params.length; i++) {
@@ -81,7 +79,7 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
         }
         return dfs.peek();
     }
-
+    
     private void startElement(String qName, Element attributes) {
         if ("void".equals(qName)) {
             String methodName = attributes.getValue("method");
@@ -91,7 +89,7 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             }
             String property = attributes.getValue("property");
             if (property != null) {
-
+                
                 BeanInfo beanInfo = beanInfoMap.get(dfs.peek().getClass());
                 if (beanInfo == null) {
                     try {
@@ -158,7 +156,7 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
                 } else {
                     cl = Class.forName(className);
                 }
-
+                
                 Object o = Array.newInstance(cl, length);
                 dfs.push(o);
                 objectMap.put(id, o);
@@ -194,12 +192,12 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             check = true;
         }
     }
-
+    
     private void characters(String str) {
         if (dfs.empty() || !check) {
             return;
         }
-
+        
         Object o = dfs.pop();
         if (o.getClass() == Integer.class) {
             dfs.push(Integer.parseInt(str));
@@ -233,13 +231,13 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             check = false;
         }
     }
-
+    
     private void endElement(String qName) {
         if ("/void".equals(qName)) {
             dfsVoid.pop().invoke(dfs.pop());
         }
     }
-
+    
     private void removeHeader() {
         if (input.substring(2, 5).toLowerCase().equals("xml")) {
             int i = 5;
@@ -247,26 +245,26 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
                 i++;
             }
             ObjectBegin = i + 1;
-
+            
         }
     }
-
-
+    
+    
     interface Invoker {
-
+        
         void invoke(Object o);
     }
-
+    
     class MethodInvoker implements Invoker {
-
+        
         Object fromObject;
         String name;
-
+        
         MethodInvoker(String name, Object fromObject) {
             this.name = name;
             this.fromObject = fromObject;
         }
-
+        
         @Override
         public void invoke(Object o) {
             try {
@@ -276,17 +274,17 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             }
         }
     }
-
+    
     class PropertyInvoker implements Invoker {
-
+        
         PropertyDescriptor propertyDescriptor;
         Object fromObject;
-
+        
         PropertyInvoker(PropertyDescriptor propertyDescriptor, Object fromObject) {
             this.propertyDescriptor = propertyDescriptor;
             this.fromObject = fromObject;
         }
-
+        
         @Override
         public void invoke(Object o) {
             try {
@@ -296,17 +294,17 @@ public class XmlDeserializing implements DeserializationSyntacseWithParse {
             }
         }
     }
-
+    
     class Indexer implements Invoker {
-
+        
         int index;
         Object arrayObject;
-
+        
         Indexer(int index, Object arrayObject) {
             this.index = index;
             this.arrayObject = arrayObject;
         }
-
+        
         @Override
         public void invoke(Object objectToPush) {
             if (arrayObject.getClass() == byte[].class) {

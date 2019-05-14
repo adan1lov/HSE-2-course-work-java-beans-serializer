@@ -96,7 +96,7 @@ public class TestingForGraph {
         for (int i = 0; i < 10; i++) {
 
             Long start = System.currentTimeMillis();
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < 1000; j++) {
                 FileOutputStream fileWriter = new FileOutputStream(
                     "cl/numOfFields" + i + ".txt");
 
@@ -108,7 +108,7 @@ public class TestingForGraph {
             Long end = System.currentTimeMillis();
 
             Long start2 = System.currentTimeMillis();
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < 1000; j++) {
                 FileOutputStream fileOutputStream = new FileOutputStream("cl/num" + i + ".txt");
                 XMLEncoder xmlEncoder = new XMLEncoder(fileOutputStream);
                 xmlEncoder.writeObject(objects[i]);
@@ -119,7 +119,7 @@ public class TestingForGraph {
             Long end2 = System.currentTimeMillis();
 
             Long start3 = System.currentTimeMillis();
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < 1000; j++) {
                 JavaDeserializer javaDeserializer = new JavaDeserializer();
                 javaDeserializer
                     .Make("cl/numOfFields" + i + ".txt", new XmlDeserializing());
@@ -127,7 +127,7 @@ public class TestingForGraph {
             Long end3 = System.currentTimeMillis();
 
             Long Start3 = System.currentTimeMillis();
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < 1000; j++) {
                 FileInputStream fileInputStream = new FileInputStream("cl/num" + i + ".txt");
                 XMLDecoder xmlDecoder = new XMLDecoder(fileInputStream);
                 xmlDecoder.readObject();
@@ -136,9 +136,9 @@ public class TestingForGraph {
             Long End3 = System.currentTimeMillis();
 
             System.out.println(
-                "numof fields " + (long) Math.pow(2, i + 3) + "\t\t\t" + (end - start)/100 + "\t" +
-                    (end2 - start2)/100  + "\t" + (end3 - start3)/100 + "\t"
-                    + (End3 - Start3)/100);
+                "numof fields " + (long) Math.pow(2, i + 3) + "\t\t\t" + (end - start) + "\t" +
+                    (end2 - start2)  + "\t" + (end3 - start3) + "\t"
+                    + (End3 - Start3));
         }
     }
 }

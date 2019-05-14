@@ -11,9 +11,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Serializer class
@@ -29,6 +27,7 @@ public class JavaSerializer {
     private SerializingSyntacse _serializingSyntacse;
     private List<Object> objectList;
     private List<String> idList;
+    private Map<Class,BeanInfo> beanInfoMap = new HashMap<>();
     
     /*---------------------------------------------------Constructor--------------------------------------------------*/
     
@@ -174,7 +173,11 @@ public class JavaSerializer {
                 _serializingSyntacse.nonPrimitiveBegin(objectType.getName(), name, output,
                     objectType.getSimpleName() + "" + (idList.size() - 1), tabs, -1,o==_object);
 
-                BeanInfo beanInfo = Introspector.getBeanInfo(o.getClass(),Object.class);
+                BeanInfo beanInfo =beanInfoMap.get(o.getClass());
+                if(beanInfo==null) {
+                    beanInfo = Introspector.getBeanInfo(o.getClass(), Object.class);
+                    beanInfoMap.put(o.getClass(), beanInfo);
+                }
                 
                 PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
 
